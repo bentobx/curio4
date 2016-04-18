@@ -1,0 +1,44 @@
+/* ==========================================================================
+   Imports
+   ========================================================================== */
+
+@import "../lib/bourbon/bourbon", "../lib/neat/neat", "../lib/base/base";
+@import url(https://fonts.googleapis.com/css?family=Tinos|Playfair+Display);
+@import url(https://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+
+/* Color palette */
+
+$white: #ffffff;
+$white-two: #fefefe;
+$purple-brown: #231f20;
+$greyish-brown: #4a3c39;
+$black: #000000;
+$brick: #c21e1e;
+$reddish: #ca3c3b;
+$sienna: #994d19;
+$dark-slate-blue: #162e57;
+
+
+// status colours
+$status-inactive: #bc633c;
+$status-pending: $status-inactive;
+$status-active: #91b351;
+$status-shipped: $status-active;
+$status-unknown: #dba71a;
+$status-preparing: $status-unknown;
+
+// fonts
+// $headings-font-family: Tinos;
+// $base-font-family: 'Playfair Display';
+// $nav-font-family: Raleway, $helvetica;
+// $subheadings-font-family: $nav-font-family;
+// $typewriter-font-family: "Special Elite", $georgia;
+
+$ease-bezier: cubic-bezier(0.555, -0.080, 0.120, 1.125);
+
+
+$black :#000;
