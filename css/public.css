@@ -325,28 +325,6 @@ body, html {
   padding: 2.35765%;
 }
 
-.experience main section aside {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 23.23176%;
-}
-
-.experience main section aside:last-child {
-  margin-right: 0;
-}
-
-.experience main section article {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 74.41059%;
-}
-
-.experience main section article:last-child {
-  margin-right: 0;
-}
-
 .experience main section.strip {
   display: block;
   color: #ffffff;
@@ -513,9 +491,27 @@ body, html {
 }
 
 .experience main section.spoilers {
+  padding: 0;
+}
+
+.experience main section.spoilers .description {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 2.35765%;
 }
 
-.experience main section.spoilers h1 {
+.experience main section.spoilers .description::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.experience main section.spoilers header {
+  padding: 2.35765%;
+  background-image: url("../images/logo/m-p-c-black-logo.png") 50% 50% no-repeat;
+}
+
+.experience main section.spoilers h1, .experience main section.spoilers h2 {
   color: #c21e1e;
 }

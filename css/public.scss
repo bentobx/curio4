@@ -55,8 +55,7 @@ body, html {
   }
   main {
     section {
-      aside { @include span-columns(3); }
-      article { @include span-columns(9); }
+
       @include pad();
       &.strip {
 
@@ -152,11 +151,20 @@ body, html {
         }
       }
       &.spoilers {
-        header
-        @include pad(default);
-        // @include background(url("../images/logo/m-p-c-black-logo.png"));
-        // @include background(url("../images/logo/m-p-c-black-logo.png");
-        h1 {
+        @include pad(0);
+
+        .description {
+          @include outer-container;
+          @include pad(default);
+
+        }
+        header {
+          @include pad(default);
+          background-image: url("../images/logo/m-p-c-black-logo.png") 50% 50% no-repeat;
+
+        }
+        // @include pad(default);
+        h1,h2 {
           color: $brick;
         }
 
