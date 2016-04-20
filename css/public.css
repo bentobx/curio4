@@ -1,7 +1,7 @@
 /* ==========================================================================
    Imports
    ========================================================================== */
-@import url(https://fonts.googleapis.com/css?family=Tinos|Playfair+Display);
+@import url(https://fonts.googleapis.com/css?family=Tinos|Playfair+Display+SC:400,400italic,700,700italic,900,900italic);
 @import url(https://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
 html {
   box-sizing: border-box;
@@ -11,15 +11,18 @@ html {
   box-sizing: inherit;
 }
 
-button, [type='button'], [type='reset'], [type='submit'] {
+/* Color palette */
+button, [type='button'], [type='reset'], [type='submit'], .button {
   appearance: none;
-  background-color: #1565c0;
-  border: 0;
+  background-color: #4a3c39;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #fff;
   border-radius: 3px;
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: "Playfair Display";
+  font-family: Helvetica;
   font-size: 1em;
   -webkit-font-smoothing: antialiased;
   font-weight: 600;
@@ -32,18 +35,18 @@ button, [type='button'], [type='reset'], [type='submit'] {
   white-space: nowrap;
 }
 
-button:hover, button:focus, [type='button']:hover, [type='button']:focus, [type='reset']:hover, [type='reset']:focus, [type='submit']:hover, [type='submit']:focus {
-  background-color: #11519a;
+button:hover, button:focus, [type='button']:hover, [type='button']:focus, [type='reset']:hover, [type='reset']:focus, [type='submit']:hover, [type='submit']:focus, .button:hover, .button:focus {
+  background-color: #3b302e;
   color: #fff;
 }
 
-button:disabled, [type='button']:disabled, [type='reset']:disabled, [type='submit']:disabled {
+button:disabled, [type='button']:disabled, [type='reset']:disabled, [type='submit']:disabled, .button:disabled {
   cursor: not-allowed;
   opacity: 0.5;
 }
 
-button:disabled:hover, [type='button']:disabled:hover, [type='reset']:disabled:hover, [type='submit']:disabled:hover {
-  background-color: #1565c0;
+button:disabled:hover, [type='button']:disabled:hover, [type='reset']:disabled:hover, [type='submit']:disabled:hover, .button:disabled:hover {
+  background-color: #4a3c39;
 }
 
 fieldset {
@@ -93,8 +96,8 @@ select[multiple]:hover {
 
 [type='color']:focus, [type='date']:focus, [type='datetime']:focus, [type='datetime-local']:focus, [type='email']:focus, [type='month']:focus, [type='number']:focus, [type='password']:focus, [type='search']:focus, [type='tel']:focus, [type='text']:focus, [type='time']:focus, [type='url']:focus, [type='week']:focus, input:not([type]):focus, textarea:focus,
 select[multiple]:focus {
-  border-color: #1565c0;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(18, 89, 169, 0.7);
+  border-color: #4a3c39;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(60, 48, 46, 0.7);
   outline: none;
 }
 
@@ -223,13 +226,13 @@ p {
 }
 
 a {
-  color: #1565c0;
+  color: #4a3c39;
   text-decoration: none;
   transition: color 150ms ease;
 }
 
 a:active, a:focus, a:hover {
-  color: #104c90;
+  color: #382d2b;
 }
 
 hr {
@@ -240,15 +243,15 @@ hr {
   margin: 1.5em 0;
 }
 
-/* ==========================================================================
-   Variables
-   ========================================================================== */
-/* Color palette */
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
   position: relative;
+}
+
+.experience {
+  background-color: #FBF9F0;
 }
 
 .experience h1 {
@@ -259,14 +262,67 @@ body, html {
   color: #ffffff;
 }
 
-.experience header {
-  background: url("../images/header-image@3x.png") no-repeat;
-  min-height: 300px;
+.experience > header {
+  padding: 2.35765%;
+  background: url("../images/header-image.png") no-repeat;
+  background-size: cover;
+  min-height: 500px;
   width: 100%;
 }
 
+.experience > header a {
+  color: #fff;
+  font-family: Helvetica;
+  font-size: 0.8em;
+  text-transform: uppercase;
+}
+
+.experience > header .back {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%;
+}
+
+.experience > header .back:last-child {
+  margin-right: 0;
+}
+
+.experience > header .logo {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+}
+
+.experience > header .logo:last-child {
+  margin-right: 0;
+}
+
+.experience > header .logo img {
+  display: block;
+  margin: 0 auto;
+  float: none;
+  text-align: center;
+}
+
+.experience > header .my-account {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%;
+}
+
+.experience > header .my-account:last-child {
+  margin-right: 0;
+}
+
+.experience > header .my-account .button {
+  float: right;
+}
+
 .experience main section {
-  padding: 20px;
+  padding: 2.35765%;
 }
 
 .experience main section aside {
@@ -291,32 +347,175 @@ body, html {
   margin-right: 0;
 }
 
-.experience main section#subhead {
-  font-size: 20px;
-  line-height: 1;
-  letter-spacing: -0.1px;
+.experience main section.strip {
+  display: block;
   color: #ffffff;
-  background-color: #231f20;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  background: url("../images/logo/mpc-logo-black-transparent.png") 50% 50% no-repeat #4a3c39;
 }
 
-.experience main section#subhead::after {
+.experience main section.strip::after {
   clear: both;
   content: "";
   display: block;
 }
 
-.experience main section#subhead .inner {
+.experience main section.strip h1 {
+  line-height: 1;
+  letter-spacing: -0.1px;
+  text-transform: uppercase;
+}
+
+.experience main section.strip .description {
   float: left;
   display: block;
   margin-right: 2.35765%;
   width: 48.82117%;
-  margin-left: 25.58941%;
+  text-align: center;
+  line-height: 1.3em;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.experience main section.strip .description:last-child {
+  margin-right: 0;
+}
+
+.experience main section.strip .prev-btn, .experience main section.strip .next-btn {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%;
+}
+
+.experience main section.strip .prev-btn:last-child, .experience main section.strip .next-btn:last-child {
+  margin-right: 0;
+}
+
+.experience main section.copy-intro {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.experience main section.copy-intro::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.experience main section.copy-intro .copy {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 65.88078%;
+}
+
+.experience main section.copy-intro .copy:last-child {
+  margin-right: 0;
+}
+
+.experience main section.copy-intro .copy .lead {
+  font-size: 24px;
+  letter-spacing: -0.2px;
+  color: #4a3c39;
+}
+
+.experience main section.copy-intro .purchase {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%;
+}
+
+.experience main section.copy-intro .purchase:last-child {
+  margin-right: 0;
+}
+
+.experience main section.copy-intro .purchase h4 {
+  font-family: Helvetica;
+  font-size: 20px;
+  letter-spacing: -0.1px;
+  color: #994d19;
   text-align: center;
 }
 
-.experience main section#subhead .inner:last-child {
+.experience main section.copy-intro .purchase .price {
+  text-align: center;
+  display: block;
+  font-size: 32px;
+  letter-spacing: -0.2px;
+  color: #000;
+  margin: 0 auto 20px;
+}
+
+.experience main section.copy-intro .purchase .purchase-type {
+  padding: 2.35765%;
+  color: #ffffff;
+  background-color: #4a3c39;
+}
+
+.experience main section.copy-intro .purchase .purchase-type .button::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.experience main section.copy-intro .warning {
+  padding: 2.35765%;
+  background: -webkit-linear-gradient(rgba(234, 68, 68, 0.5), rgba(255, 0, 0, 0));
+  background: -o-linear-gradient(rgba(234, 68, 68, 0.5), rgba(255, 0, 0, 0));
+  background: linear-gradient(rgba(234, 68, 68, 0.5), rgba(255, 0, 0, 0));
+}
+
+.experience main section.copy-intro .warning h4 {
+  color: rgba(234, 68, 68, 0.5);
+}
+
+.experience main section.copy-intro .warning p {
+  font-size: 12px;
+  letter-spacing: -0.1px;
+  color: #4a3c39;
+}
+
+.experience main section.interstitial {
+  padding: 2.35765%;
+  margin-bottom: 30px;
+  background: url("../images/header-image.png") no-repeat;
+  background-size: cover;
+  height: 400px;
+}
+
+.experience main section.copy-body {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.experience main section.copy-body::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.experience main section.copy-body blockquote {
+  padding: 2.35765%;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%;
+  font-family: Helvetica;
+  font-size: 18px;
+  float: right;
+}
+
+.experience main section.copy-body blockquote:last-child {
   margin-right: 0;
+}
+
+.experience main section.spoilers {
+  padding: 2.35765%;
+}
+
+.experience main section.spoilers h1 {
+  color: #c21e1e;
 }

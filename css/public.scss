@@ -10,8 +10,8 @@ body, html {
   height: 100%;
   position: relative;
 }
-
 .experience {
+  background-color: #FBF9F0;
   h1 {
     font-family: $heading-font-family;
     font-size: 36px;
@@ -19,31 +19,148 @@ body, html {
     letter-spacing: -0.2px;
     color: $white;
   }
-  header {
-    background: url("../images/header-image@3x.png") no-repeat;
-    min-height: 300px;
-    width: 100%;
 
+  &> header {
+    @include pad();
+    background: url("../images/header-image.png") no-repeat;
+    // @todo: fix sizing
+    background-size: cover;
+    min-height: 500px;
+    width: 100%;
+    a {
+      color: #fff;
+      font-family: $sans-font-family;
+      font-size: $base-font-size * .8;
+      text-transform: uppercase;
+    }
+    .back {
+      @include span-columns(3);
+    }
+    .logo {
+      @include span-columns(6);
+
+      img {
+        display: block;
+        margin: 0 auto;
+        float: none;
+        text-align: center;
+      }
+    }
+    .my-account {
+      @include span-columns(3);
+      .button {
+        float: right;
+      }
+    }
   }
   main {
-
     section {
       aside { @include span-columns(3); }
       article { @include span-columns(9); }
+      @include pad();
+      &.strip {
 
-      padding: 20px;
-      &#subhead {
-        font-size: 20px;
-        line-height: 1;
-        letter-spacing: -0.1px;
+        @include row();
         color: $white;
-        background-color: $purple-brown;
-        @include outer-container;
-        .inner {
-          @include span-columns(6);
-          @include shift(3);
-          text-align: center;
+        background: url('../images/logo/mpc-logo-black-transparent.png') 50% 50% no-repeat $greyish-brown;
+        h1 {
+          line-height: 1;
+          letter-spacing: -0.1px;
+          text-transform: uppercase;
         }
+
+        .description {
+          @include span-columns(6);
+          // @include shift(3);
+          text-align: center;
+          line-height: 1.3em;
+          font-size: 20px;
+          font-weight: 400;
+        }
+        .prev-btn, .next-btn {
+          @include span-columns(3);
+        }
+      }
+      &.copy-intro {
+        @include outer-container;
+        .copy {
+          @include span-columns(8);
+          .lead {
+            font-size: 24px;
+            letter-spacing: -0.2px;
+            color: $greyish-brown;
+          }
+        }
+        .purchase {
+          @include span-columns(4);
+          h4 {
+            font-family: $sans-font-family;
+            font-size: 20px;
+            letter-spacing: -0.1px;
+            color: $sienna;
+            text-align: center;
+          }
+          .price {
+            text-align: center;
+            display: block;
+            font-size: 32px;
+            letter-spacing: -0.2px;
+            color: #000;
+            margin: 0 auto 20px;
+          }
+          .purchase-type {
+            @include pad();
+            color: $white;
+            background-color: $greyish-brown;
+            .button {
+              @include clearfix;
+            }
+          }
+
+        }
+        .warning {
+          @include pad(default);
+          background: -webkit-linear-gradient($tomato-50, rgba(255, 0, 0, 0.0));
+          background: -o-linear-gradient($tomato-50, rgba(255, 0, 0, 0.0));
+          background: linear-gradient($tomato-50, rgba(255, 0, 0, 0.0));
+          h4 {
+            color: $tomato-50
+          }
+          p {
+            font-size: 12px;
+            letter-spacing: -0.1px;
+            color: $greyish-brown;
+          }
+        }
+      }
+      &.interstitial {
+        @include pad();
+        margin-bottom: 30px;
+        background: url("../images/header-image.png") no-repeat;
+        background-size: cover;
+        height: 400px;
+      }
+      &.copy-body {
+        @include outer-container;
+        blockquote {
+          @include pad();
+          @include span-columns(4);
+          font-family: $sans-font-family;
+          font-size: 18px;
+          float: right;
+
+        }
+      }
+      &.spoilers {
+        header
+        @include pad(default);
+        // @include background(url("../images/logo/m-p-c-black-logo.png"));
+        // @include background(url("../images/logo/m-p-c-black-logo.png");
+        h1 {
+          color: $brick;
+        }
+
+
       }
     }
   }
