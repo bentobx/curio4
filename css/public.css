@@ -428,29 +428,43 @@ body, html {
 
 .experience main section.copy-intro .purchase .purchase-type {
   padding: 2.35765%;
+  display: block;
   color: #ffffff;
   background-color: #4a3c39;
 }
 
-.experience main section.copy-intro .purchase .purchase-type .button::after {
+.experience main section.copy-intro .purchase .purchase-type::after {
   clear: both;
   content: "";
   display: block;
 }
 
+.experience main section.copy-intro .purchase .purchase-type .button {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+  text-align: center;
+}
+
+.experience main section.copy-intro .purchase .purchase-type .button:last-child {
+  margin-right: 0;
+}
+
 .experience main section.copy-intro .warning {
   padding: 2.35765%;
+  text-align: center;
   background: -webkit-linear-gradient(rgba(234, 68, 68, 0.5), rgba(255, 0, 0, 0));
   background: -o-linear-gradient(rgba(234, 68, 68, 0.5), rgba(255, 0, 0, 0));
   background: linear-gradient(rgba(234, 68, 68, 0.5), rgba(255, 0, 0, 0));
 }
 
 .experience main section.copy-intro .warning h4 {
-  color: rgba(234, 68, 68, 0.5);
+  color: #c21e1e;
 }
 
 .experience main section.copy-intro .warning p {
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: -0.1px;
   color: #4a3c39;
 }
@@ -494,6 +508,32 @@ body, html {
   padding: 0;
 }
 
+.experience main section.spoilers header {
+  padding: 4px 0;
+  background: url("../images/logo/m-p-c-black-logo.png") no-repeat 50% 135px, linear-gradient(rgba(234, 68, 68, 0.5), rgba(255, 0, 0, 0));
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  border-top: solid 3px #c21e1e;
+  border-bottom: solid 3px #c21e1e;
+}
+
+.experience main section.spoilers header h1 {
+  line-height: 1;
+}
+
+.experience main section.spoilers p {
+  margin: 0;
+}
+
+.experience main section.spoilers .spoiler-content {
+  padding: 2.35765%;
+  padding-bottom: 150px;
+  color: #c21e1e;
+  border-top: solid 1px #c21e1e;
+  border-bottom: solid 1px #c21e1e;
+}
+
 .experience main section.spoilers .description {
   max-width: 1200px;
   margin-left: auto;
@@ -507,9 +547,10 @@ body, html {
   display: block;
 }
 
-.experience main section.spoilers header {
-  padding: 2.35765%;
-  background-image: url("../images/logo/m-p-c-black-logo.png") 50% 50% no-repeat;
+.experience main section.spoilers li.mailing img {
+  width: 100%;
+  margin-right: 0;
+  width: 100%;
 }
 
 .experience main section.spoilers h1, .experience main section.spoilers h2 {
