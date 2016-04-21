@@ -1,7 +1,4 @@
 @import "base";
-// create sprite sheets
-// $sprites: 	sprite-map("public/sprites/@1x/*.png");
-// $sprites2x: sprite-map("public/sprites/@2x/*.png");
 body, html {
   margin: 0;
   padding: 0;
@@ -63,14 +60,20 @@ body, html {
         }
         .description {
           @include span-columns(6);
-          // @include shift(3);
+          @include media('<=tablet') {
+            @include span-columns(12);
+          }
           text-align: center;
           line-height: 1.3em;
           font-size: 20px;
           font-weight: 400;
+          // @include shift(3);
         }
         .prev-btn, .next-btn {
           @include span-columns(3);
+          @include media('<=tablet') {
+            display: none;
+          }
         }
       }
       &.copy-intro {
@@ -145,11 +148,9 @@ body, html {
         }
       }
       &.spoilers {
-
         header {
           @include pad(4px 0);
           @include omega();
-
           h1 { line-height: 1; }
           background: url("../images/logo/m-p-c-black-logo.png") no-repeat 50% 135px, linear-gradient($tomato-50, rgba(255, 0, 0, 0.0));
           text-align: center;
@@ -171,25 +172,16 @@ body, html {
           @include outer-container;
           @include pad(default);
         }
-
         li.mailing {
           img {
             @include fill-parent;
             width: 100%;
           }
         }
-
         h1,h2 {
           color: $brick;
         }
       }
     }
-  }
-}
-
-
-.my-class {
-  @include media($phone) { // As defined in _grid-settings.scss
-    @include span-columns(2);
   }
 }

@@ -1,47 +1,54 @@
+@import "../lib/bourbon/bourbon";
 @import "../lib/neat/neat-helpers"; // or "neat-helpers" when in Rails
 
-/* ==========================================================================
-   Grid settings
-   ========================================================================== */
 
-$column: 40px;
-$gutter: 20px;
-$grid-columns: 16;
-$max-width: 990px;
-//$visual-grid: true;
 
-/* ==========================================================================
-   Breakpoints
-   ========================================================================== */
-
-$screen-lg: 	1200px;
-$screen-md: 	992px;
-$screen-sm: 	768px;
-$screen-xs: 	480px;
-
-$desktop-lg: 	new-breakpoint(max-width $screen-lg 16);
-$desktop: 		new-breakpoint(max-width $screen-md 16);
-$tablet: 			new-breakpoint(max-width $screen-sm 8);
-$phone: 			new-breakpoint(max-width $screen-xs 4);
-
-/* ==========================================================================
-   Mixins
-   ========================================================================== */
-
-@mixin hidden-phone {
-	display: none !important;
-
-	@include media(min-width $screen-xs + 1) {
-		display: block !important;
-	}
-
-}
-
-@mixin visible-phone {
-	display: none !important;
-
-	@include media($screen-xs) {
-		display: block !important;
-	}
-
-}
+// /* ==========================================================================
+//    Grid settings
+//    ========================================================================== */
+//
+//    $column: 90px;
+//    $gutter: 30px;
+//    $grid-columns: 10;
+//    $max-width: 1200px;
+//
+//    // Define your breakpoints
+//    $tablet: new-breakpoint(max-width 768px 8);
+//    $mobile: new-breakpoint(max-width 480px 4);
+// //$visual-grid: true;
+//
+// /* ==========================================================================
+//    Breakpoints
+//    ========================================================================== */
+//
+// $screen-lg: 	1200px;
+// $screen-md: 	992px;
+// $screen-sm: 	768px;
+// $screen-xs: 	480px;
+//
+// $desktop-lg: 	new-breakpoint(max-width $screen-lg 16);
+// $desktop: 		new-breakpoint(max-width $screen-md 16);
+// $tablet: 			new-breakpoint(max-width $screen-sm 8);
+// $phone: 			new-breakpoint(max-width $screen-xs 4);
+//
+// /* ==========================================================================
+//    Mixins
+//    ========================================================================== */
+//
+// @mixin hidden-phone {
+// 	display: none !important;
+//
+// 	@include media(min-width $screen-xs + 1) {
+// 		display: block !important;
+// 	}
+//
+// }
+//
+// @mixin visible-phone {
+// 	display: none !important;
+//
+// 	@include media($screen-xs) {
+// 		display: block !important;
+// 	}
+//
+// }
