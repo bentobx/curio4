@@ -2,6 +2,11 @@
 @import "../lib/neat/neat-helpers"; // or "neat-helpers" when in Rails
 
 
+$breakpoints: (
+  'small': 480px,
+  'medium': 960px,
+  'large': 1200px
+);
 
 // /* ==========================================================================
 //    Grid settings

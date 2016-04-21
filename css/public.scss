@@ -1,38 +1,56 @@
 @import "base";
+
+
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
   position: relative;
 }
+
+h1 { @extend %h; }
+h2 { @extend %sh; }
+h3 { @extend %ssh; }
+blockquote { @extend %bq; }
+p { @extend %p; }
+small { @extend %small; }
+
 .experience {
   background-color: #FBF9F0;
   h1 {
     font-family: $heading-font-family;
-    font-size: 36px;
-    line-height: 0.7;
-    letter-spacing: -0.2px;
+
     color: $white;
   }
   &> header {
     @include pad();
-    background: url("../images/header-image.png") no-repeat;
+    background: url("../images/header-image.png") no-repeat 50% 50%;
     // @todo: fix sizing
     background-size: cover;
-    min-height: 500px;
+    min-height: 300px;
     width: 100%;
     a {
       color: #fff;
       font-family: $sans-font-family;
+      @extend %p;
       font-size: $base-font-size * .8;
       text-transform: uppercase;
     }
     .back {
-      @include span-columns(3);
+      @include span-columns(4);
+      @include media('<=small') {
+        display: none;
+
+        a {
+        }
+      }
     }
     .logo {
-      @include span-columns(6);
+      @include span-columns(4);
       img {
+        @include media('<=small') {
+          float: left;
+        }
         display: block;
         margin: 0 auto;
         float: none;
@@ -40,7 +58,10 @@ body, html {
       }
     }
     .my-account {
-      @include span-columns(3);
+      @include span-columns(4);
+      @include media('<=small') {
+        @include shift(4);
+      }
       .button {
         float: right;
       }
@@ -60,8 +81,11 @@ body, html {
         }
         .description {
           @include span-columns(6);
-          @include media('<=tablet') {
+          @include media('<=medium') {
             @include span-columns(12);
+          }
+          p:last-child {
+            margin: 0;
           }
           text-align: center;
           line-height: 1.3em;
@@ -71,7 +95,7 @@ body, html {
         }
         .prev-btn, .next-btn {
           @include span-columns(3);
-          @include media('<=tablet') {
+          @include media('<=medium') {
             display: none;
           }
         }
@@ -80,17 +104,24 @@ body, html {
         @include outer-container;
         .copy {
           @include span-columns(8);
+          @include media('<=medium') {
+            @include span-columns(12);
+          }
           .lead {
-            font-size: 24px;
+            font-weight: 900;
             letter-spacing: -0.2px;
             color: $greyish-brown;
           }
         }
         .purchase {
           @include span-columns(4);
+          @include media('<=medium') {
+            @include span-columns(12);
+          }
           h4 {
-            font-family: $sans-font-family;
-            font-size: 20px;
+            // font-family: $sans-font-family;
+            // font-size: 20px;
+            text-transform: uppercase;
             letter-spacing: -0.1px;
             color: $sienna;
             text-align: center;
@@ -138,13 +169,32 @@ body, html {
         height: 400px;
       }
       &.copy-body {
+        p:first-child {
+          &::first-line {
+            font-weight: 900;
+          }
+        }
         @include outer-container;
-        blockquote {
-          @include pad();
-          @include span-columns(4);
-          font-family: $sans-font-family;
-          font-size: 18px;
-          float: right;
+        figure {
+          &.quote {
+            @include pad();
+            @include span-columns(4);
+            @include media('<=medium') {
+              @include pad(0);
+              @include margin(0 auto 1em auto);
+              text-align: center;
+              @include span-columns(12);
+            }
+            blockquote {
+              @include margin(0);
+            }
+            figcaption::before {
+              content: "— ";
+            }
+            float: right;
+          }
+          font-style: italic;
+          // font-family: $sans-font-family;
         }
       }
       &.spoilers {
@@ -152,7 +202,7 @@ body, html {
           @include pad(4px 0);
           @include omega();
           h1 { line-height: 1; }
-          background: url("../images/logo/m-p-c-black-logo.png") no-repeat 50% 135px, linear-gradient($tomato-50, rgba(255, 0, 0, 0.0));
+          background: url("../images/logo/m-p-c-black-logo.png") no-repeat 50% 110px, linear-gradient($tomato-50, rgba(255, 0, 0, 0.0));
           text-align: center;
           text-transform: uppercase;
           margin-bottom: 20px;
@@ -176,6 +226,13 @@ body, html {
           img {
             @include fill-parent;
             width: 100%;
+          }
+          .caption {
+            @include row();
+            color: shade($brick,20%);
+            font-style: italic;
+            text-align: center;
+
           }
         }
         h1,h2 {
