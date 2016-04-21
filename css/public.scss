@@ -1,33 +1,31 @@
 @import "base";
-
-
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
   position: relative;
 }
-
 h1 { @extend %h; }
 h2 { @extend %sh; }
 h3 { @extend %ssh; }
 blockquote { @extend %bq; }
 p { @extend %p; }
 small { @extend %small; }
-
 .experience {
   background-color: #FBF9F0;
   h1 {
     font-family: $heading-font-family;
-
     color: $white;
   }
   &> header {
     @include pad();
-    background: url("../images/header-image.png") no-repeat 50% 50%;
+
+    @include retina-image('../images/header-image');
+
+    // background: url("../images/header-image.png") no-repeat 50% 50%;
     // @todo: fix sizing
-    background-size: cover;
-    min-height: 300px;
+
+    min-height: 560px;
     width: 100%;
     a {
       color: #fff;
@@ -40,7 +38,6 @@ small { @extend %small; }
       @include span-columns(4);
       @include media('<=small') {
         display: none;
-
         a {
         }
       }
@@ -84,8 +81,11 @@ small { @extend %small; }
           @include media('<=medium') {
             @include span-columns(12);
           }
-          p:last-child {
-            margin: 0;
+          p {
+            color: $white-two;
+            &:last-child {
+              margin: 0;
+            }
           }
           text-align: center;
           line-height: 1.3em;
@@ -161,6 +161,56 @@ small { @extend %small; }
           }
         }
       }
+      &.exp-particulars {
+        @include row();
+        h1 {
+          color: $dark-slate-blue;
+          font-weight: 100;
+          text-transform: uppercase;
+          text-align: center;
+          border-color: lighten($dark-slate-blue,50%);
+          border-bottom: dotted 1px;
+          font-size: 1em;
+          @include margin(0 auto 2px auto);
+          @include pad(default);
+          + ul {
+            border-top: solid 2px;
+            @include margin(2px 0 0 0);
+            @include pad(14px 0 0 0);
+            text-align: center;
+            li {
+              @include margin(0 0 .8em 0);
+              &:last-child {
+                @include margin(0);
+              }
+            }
+          }
+        }
+        div {
+          @include span-columns(4);
+          @include media('<=medium') {
+            @include pad(0);
+            @include margin(0 auto 1em auto);
+            @include span-columns(12);
+          }
+          &.deliveries {
+            ul {
+              @include row();
+
+            }
+            li {
+              @include span-columns(3);
+              @include omega(4n);
+            }
+            .envelope {
+              background-image: url(../images/deliveries-sprites/envelope@2x.png);
+              height: 48px;
+              width: 56px;
+            }
+
+          }
+        }
+      }
       &.interstitial {
         @include pad();
         margin-bottom: 30px;
@@ -199,15 +249,17 @@ small { @extend %small; }
       }
       &.spoilers {
         header {
-          @include pad(4px 0);
-          @include omega();
-          h1 { line-height: 1; }
           background: url("../images/logo/m-p-c-black-logo.png") no-repeat 50% 110px, linear-gradient($tomato-50, rgba(255, 0, 0, 0.0));
           text-align: center;
           text-transform: uppercase;
           margin-bottom: 20px;
           border-top: solid 3px $brick;
           border-bottom: solid 3px $brick;
+          @include pad(4px 0);
+          @include omega();
+          h1 {
+            line-height: 1;
+          }
         }
         p { margin: 0; }
         @include pad(0);
@@ -229,10 +281,10 @@ small { @extend %small; }
           }
           .caption {
             @include row();
-            color: shade($brick,20%);
+            // color: shade($brick,20%);
+            color: $dark-slate-blue;
             font-style: italic;
             text-align: center;
-
           }
         }
         h1,h2 {
