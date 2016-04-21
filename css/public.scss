@@ -1,9 +1,7 @@
 @import "base";
-
 // create sprite sheets
 // $sprites: 	sprite-map("public/sprites/@1x/*.png");
 // $sprites2x: sprite-map("public/sprites/@2x/*.png");
-
 body, html {
   margin: 0;
   padding: 0;
@@ -19,7 +17,6 @@ body, html {
     letter-spacing: -0.2px;
     color: $white;
   }
-
   &> header {
     @include pad();
     background: url("../images/header-image.png") no-repeat;
@@ -38,7 +35,6 @@ body, html {
     }
     .logo {
       @include span-columns(6);
-
       img {
         display: block;
         margin: 0 auto;
@@ -55,10 +51,8 @@ body, html {
   }
   main {
     section {
-
       @include pad();
       &.strip {
-
         @include row();
         color: $white;
         background: url('../images/logo/mpc-logo-black-transparent.png') 50% 50% no-repeat $greyish-brown;
@@ -67,7 +61,6 @@ body, html {
           letter-spacing: -0.1px;
           text-transform: uppercase;
         }
-
         .description {
           @include span-columns(6);
           // @include shift(3);
@@ -109,24 +102,26 @@ body, html {
           }
           .purchase-type {
             @include pad();
+            @include row();
             color: $white;
             background-color: $greyish-brown;
             .button {
-              @include clearfix;
+              @include span-columns(6);
+              text-align: center;
             }
           }
-
         }
         .warning {
           @include pad(default);
+          text-align: center;
           background: -webkit-linear-gradient($tomato-50, rgba(255, 0, 0, 0.0));
           background: -o-linear-gradient($tomato-50, rgba(255, 0, 0, 0.0));
           background: linear-gradient($tomato-50, rgba(255, 0, 0, 0.0));
           h4 {
-            color: $tomato-50
+            color: $brick
           }
           p {
-            font-size: 12px;
+            font-size: 14px;
             letter-spacing: -0.1px;
             color: $greyish-brown;
           }
@@ -147,29 +142,54 @@ body, html {
           font-family: $sans-font-family;
           font-size: 18px;
           float: right;
-
         }
       }
       &.spoilers {
-        @include pad(0);
 
+        header {
+          @include pad(4px 0);
+          @include omega();
+
+          h1 { line-height: 1; }
+          background: url("../images/logo/m-p-c-black-logo.png") no-repeat 50% 135px, linear-gradient($tomato-50, rgba(255, 0, 0, 0.0));
+          text-align: center;
+          text-transform: uppercase;
+          margin-bottom: 20px;
+          border-top: solid 3px $brick;
+          border-bottom: solid 3px $brick;
+        }
+        p { margin: 0; }
+        @include pad(0);
+        .spoiler-content {
+          @include pad(default);
+          padding-bottom: 150px;
+          color: $brick;
+          border-top: solid 1px $brick;
+          border-bottom: solid 1px $brick;
+        }
         .description {
           @include outer-container;
           @include pad(default);
-
         }
-        header {
-          @include pad(default);
-          background-image: url("../images/logo/m-p-c-black-logo.png") 50% 50% no-repeat;
 
+        li.mailing {
+          img {
+            @include fill-parent;
+            width: 100%;
+          }
         }
-        // @include pad(default);
+
         h1,h2 {
           color: $brick;
         }
-
-
       }
     }
+  }
+}
+
+
+.my-class {
+  @include media($phone) { // As defined in _grid-settings.scss
+    @include span-columns(2);
   }
 }
