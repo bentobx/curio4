@@ -11,6 +11,7 @@ h3 { @extend %ssh; }
 blockquote { @extend %bq; }
 p { @extend %p; }
 small { @extend %small; }
+
 .experience {
   background-color: #FBF9F0;
   h1 {
@@ -19,12 +20,8 @@ small { @extend %small; }
   }
   &> header {
     @include pad();
-
-    @include retina-image('../images/header-image');
-
-    // background: url("../images/header-image.png") no-repeat 50% 50%;
-    // @todo: fix sizing
-
+    // @include retina-image('../images/header-image');
+    background: url("../images/header-image@2x.png") no-repeat 50% 50%;
     min-height: 560px;
     width: 100%;
     a {
@@ -196,16 +193,21 @@ small { @extend %small; }
           &.deliveries {
             ul {
               @include row();
-
-            }
-            li {
-              @include span-columns(3);
-              @include omega(4n);
-            }
-            .envelope {
-              background-image: url(../images/deliveries-sprites/envelope@2x.png);
-              height: 48px;
-              width: 56px;
+              > :first-child {
+                @include shift(3);
+              }
+              li {
+                @include span-columns(3);
+                @include omega(4n);
+              }
+              .glyph {
+                width: 62px;
+                height: 50px;
+                object-fit: contain;
+                background-repeat: no-repeat;
+              }
+              .envelope { background-image: url(../images/deliveries-sprites/envelope@2x.png); }
+              .crate { background-image: url(../images/deliveries-sprites/crate@2x.png); }
             }
 
           }
