@@ -20,7 +20,6 @@ body {
   background-color: #FBF9F0;
   &> header {
     @include pad();
-
     min-height: 560px;
     width: 100%;
     a {
@@ -387,12 +386,12 @@ body {
     // @extend .experience;
     &> header {
       // @include background-image(url("../images/home/valence-and-image") no-repeat 50% 50%);
-      @include retina-image('../images/home/valence-and-image', cover, 'png', '../images/home/valence-and-image@3x');
+      // @include retina-image('../images/home/valence-and-image', cover, 'png', '../images/home/valence-and-image@3x');
       background-position: 50% 50%;
       background-repeat: no-repeat;
       background-size: cover;
       video {
-        position: fixed;
+        position: absolute;
         top: 50%;
         left: 50%;
         min-width: 100%;
@@ -401,7 +400,7 @@ body {
         height: auto;
         z-index: -100;
         @include transform(translateX(-50%) translateY(-50%));
-        background: url(polina.jpg) no-repeat;
+        // background: url(polina.jpg) no-repeat;
         background-size: cover;
       }
     }
