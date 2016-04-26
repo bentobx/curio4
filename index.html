@@ -34,10 +34,11 @@
 
     <section class="copy-intro">
       <div class="copy">
-        <p class="lead">
+        <p>
           Late one evening, an obsidian wagon drawn by horses of a peculiar pallor arrived at our warehouse.
         </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
       <div class="purchase">
         <h4>Purchase</h4>
@@ -143,6 +144,20 @@
 
   <nav></nav>
   <footer></footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
+  <!--@TODO: MPC: update with your own kit ID  -->
+  <script src="https://use.typekit.net/xfy3uwm.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $('.sliding-panel-button,.sliding-panel-fade-screen,.sliding-panel-close').on('click touchstart',function (e) {
+      $('.sliding-panel-content,.sliding-panel-fade-screen').toggleClass('is-visible');
+      e.preventDefault();
+    });
+  });
+
+  </script>
 </body>
 </html>
