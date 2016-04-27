@@ -1,0 +1,181 @@
+/* Color palette */
+
+$white: #ffffff;
+$white-two: #fefefe;
+$purple-brown: #231f20;
+$greyish-brown: #4a3c39;
+$black: #000000;
+$brick: #c21e1e;
+$reddish: #ca3c3b;
+$sienna: #994d19;
+$dark-slate-blue: #162e57;
+$tomato: #e03e1b;
+$tomato-50: fade-out($tomato, .5);
+
+
+// status colours
+$status-inactive: #bc633c;
+$status-pending: $status-inactive;
+$status-active: #91b351;
+$status-shipped: $status-active;
+$status-unknown: #dba71a;
+$status-preparing: $status-unknown;
+
+
+// fonts
+// $headings-font-family: Tinos;
+// $base-font-family: 'Playfair Display';
+// $nav-font-family: Raleway, $helvetica;
+// $subheadings-font-family: $nav-font-family;
+// $typewriter-font-family: "Special Elite", $georgia;
+
+$ease-bezier: cubic-bezier(0.555, -0.080, 0.120, 1.125);
+
+
+// Breakpoints
+$medium-screen: 600px;
+$large-screen: 900px;
+
+// Typography
+$heading-font-family: "goudy-old-style",sans-serif;
+$base-font-family: "goudy-old-style",sans-serif;
+$sans-font-family: "ff-tisa-sans-web-pro";
+//
+// $base-font-family: $base-font-family;
+// $heading-font-family: $headings-font-family;
+
+// Font Sizes
+$base-font-size: 1em;
+
+// Line height
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+
+// Other Sizes
+$base-border-radius: 3px;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+
+// Colors
+$blue: #1565c0;
+$dark-gray: #333;
+$medium-gray: #999;
+$light-gray: #ddd;
+
+// Font Colors
+$base-font-color: $dark-gray;
+$action-color: $greyish-brown;
+
+// Border
+$base-border-color: $light-gray;
+$base-border: 1px solid $base-border-color;
+
+// Background Colors
+$base-background-color: #fff;
+$secondary-background-color: tint($base-border-color, 75%);
+
+// Forms
+$form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+
+// Animations
+$base-duration: 150ms;
+$base-timing: ease;
+
+
+/* powe helper */
+@function pow($x, $y) {
+  $ret: 1;
+  @if $y > 0 {
+    @for $i from 1 through $y {
+        $ret: $ret * $x;
+    }
+  }
+  @else {
+    @for $i from $y to 0 {
+        $ret: $ret / $x;
+    }
+  }
+  @return $ret;
+}
+
+/* font rhythm */
+$bp-sizes: (
+  default: (
+  	base-font-size: $base-font-size,
+  	base-line-height: 1.3,
+  	scale: 1.2
+  ),
+  small: (
+    base-font-size: 16px,
+    base-line-height: 1.3,
+    scale: 1.25
+  ),
+  medium: (
+    base-font-size: 18px,
+    base-line-height: 1.4,
+    scale: 1.4
+  ),
+  large: (
+    base-font-size: 22px,
+    base-line-height: 1.5,
+    scale: 1.5
+  )
+);
+
+$breakpoints: (
+  default: '',
+  small: 480px,
+  medium: 720px,
+  large: 960px
+);
+
+$font-sizes: ( p, bq, ssh, sh, h);
+
+@mixin breakpoint($name) {
+  @if not map-has-key($breakpoints, $name) {
+    @warn "Invalid breakpoint `#{$name}`.";
+  } @else {
+    @if map-get($breakpoints, $name) == '' {
+      @content;
+    } @else {
+      @media (min-width: map-get($breakpoints, $name)) {
+        @content;
+      }
+    }
+  }
+}
+
+@function get-breakpoint-property($prop, $bp) {
+  @return map-get(map-get($bp-sizes, $bp), $prop);
+}
+
+@mixin generate-font-properties($label, $scale, $base-font-size, $base-line-height) {
+  $scale-value: index($font-sizes, $label) - 1;
+
+  $fs: pow($scale, $scale-value) * $base-font-size;
+	$lh: $base-font-size * $base-line-height / $fs;
+
+	@while $lh < 1 {
+	  $lh: $lh + $lh;
+	}
+
+  font-size: $fs;
+  line-height: $lh;
+}
+
+@each $size, $data in $bp-sizes {
+
+  $bsf: get-breakpoint-property(base-font-size, $size);
+  $blh: get-breakpoint-property(base-line-height, $size);
+  $s: get-breakpoint-property(scale, $size);
+
+  @include breakpoint($size) {
+    @each $label in $font-sizes {
+      %#{$label} {
+        @include generate-font-properties($label, $s, $bsf, $blh);
+      }
+    }
+  }
+}
