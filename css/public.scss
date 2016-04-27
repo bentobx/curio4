@@ -537,3 +537,32 @@ body {
     // }
   }
 }
+
+
+footer {
+  @include pad(default default 10em default);
+  border-top: 1px solid fade-out($greyish-brown,20%);
+
+  .terms-links {
+    @include span-columns(1 of 2);
+    a {
+      @extend %p;
+      color: $greyish-brown;
+      font-family: $sans-font-family;
+      font-size: $base-font-size * .8;
+      text-transform: uppercase;
+      text-decoration: underline;
+      &:hover,&:active,&:focus { color: darken($purple-brown,20%); }
+    }
+  }
+  .contact-links {
+    @extend .mobile-footer;
+    @include span-columns(1 of 2);
+    .social {
+      @include span-columns(2 of 3);
+    }
+    #footer-logo {
+      @include span-columns(1 of 3);
+    }
+  }
+}

@@ -2,6 +2,7 @@
 /* ==========================================================================
    Imports
    ========================================================================== */
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css);
 html {
   box-sizing: border-box;
 }
@@ -13,7 +14,7 @@ html {
 /* Color palette */
 /* powe helper */
 /* font rhythm */
-p, body > header a {
+p, body > header a, footer .terms-links a {
   font-size: 1em;
   line-height: 1.3;
 }
@@ -39,7 +40,7 @@ h1 {
 }
 
 @media (min-width: 480px) {
-  p, body > header a {
+  p, body > header a, footer .terms-links a {
     font-size: 16px;
     line-height: 1.3;
   }
@@ -62,7 +63,7 @@ h1 {
 }
 
 @media (min-width: 720px) {
-  p, body > header a {
+  p, body > header a, footer .terms-links a {
     font-size: 18px;
     line-height: 1.4;
   }
@@ -85,7 +86,7 @@ h1 {
 }
 
 @media (min-width: 960px) {
-  p, body > header a {
+  p, body > header a, footer .terms-links a {
     font-size: 22px;
     line-height: 1.5;
   }
@@ -1121,4 +1122,65 @@ body.home main section.copy-body .block h2 {
   background-color: rgba(153, 77, 25, 0.2);
   background-image: linear-gradient(0deg, rgba(153, 77, 25, 0.2), rgba(0, 0, 0, 0.6));
   display: block;
+}
+
+footer {
+  padding: 2.35765% 2.35765% 10em 2.35765%;
+  border-top: 1px solid #4a3c39;
+}
+
+footer .terms-links {
+  float: left;
+  display: block;
+  margin-right: 16.03631%;
+  width: 41.98184%;
+}
+
+footer .terms-links:last-child {
+  margin-right: 0;
+}
+
+footer .terms-links a {
+  color: #4a3c39;
+  font-family: "ff-tisa-sans-web-pro";
+  font-size: 0.8em;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+footer .terms-links a:hover, footer .terms-links a:active, footer .terms-links a:focus {
+  color: black;
+}
+
+footer .contact-links {
+  float: left;
+  display: block;
+  margin-right: 16.03631%;
+  width: 41.98184%;
+}
+
+footer .contact-links:last-child {
+  margin-right: 0;
+}
+
+footer .contact-links .social {
+  float: left;
+  display: block;
+  margin-right: 10.1484%;
+  width: 63.28387%;
+}
+
+footer .contact-links .social:last-child {
+  margin-right: 0;
+}
+
+footer .contact-links #footer-logo {
+  float: left;
+  display: block;
+  margin-right: 10.1484%;
+  width: 26.56773%;
+}
+
+footer .contact-links #footer-logo:last-child {
+  margin-right: 0;
 }
