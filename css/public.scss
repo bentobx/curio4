@@ -20,6 +20,7 @@ body {
   background-color: #FBF9F0;
   &> header {
     @include pad();
+    @include omega();
     min-height: 560px;
     width: 100%;
     a {
@@ -35,7 +36,7 @@ body {
       font-size: .7em;
     }
     .back,.members-area {
-      @include span-columns(4);
+      @include span-columns(1 of 3);
       @include media('<=small') {
         display: none;
         a {
@@ -43,7 +44,7 @@ body {
       }
     }
     .logo {
-      @include span-columns(4);
+      @include span-columns(1 of 3);
       img {
         @include media('<=small') {
           float: left;
@@ -55,7 +56,7 @@ body {
       }
     }
     .my-account {
-      @include span-columns(4);
+      @include span-columns(1 of 3);
       @include media('<=small') {
         @include shift(4);
       }
@@ -390,24 +391,24 @@ body {
       background-position: 50% 50%;
       background-repeat: no-repeat;
       background-size: cover;
+
       video {
         position: absolute;
-        top: 50%;
-        left: 50%;
+        top: 0;
         min-width: 100%;
         min-height: 100%;
         width: auto;
-        height: auto;
+        height: 100%;
         z-index: -100;
         @include transform(translateX(-50%) translateY(-50%));
-        // background: url(polina.jpg) no-repeat;
+        @include background-image(url("../images/posters/MPC_EST_489_1600kbps.png") no-repeat 50% 50%);
         background-size: cover;
       }
     }
 
     @include media('<=medium') {
       &> header {
-        background: url(polina.jpg) #000 no-repeat center center fixed;
+        @include background-image(url("../images/posters/MPC_EST_489_1600kbps.png") no-repeat 50% 50%);
         video {
           display: none;
         }

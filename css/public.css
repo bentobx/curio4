@@ -351,6 +351,7 @@ body {
 
 body > header {
   padding: 2.35765%;
+  margin-right: 0;
   min-height: 560px;
   width: 100%;
 }
@@ -374,8 +375,8 @@ body > header .button {
 body > header .back, body > header .members-area {
   float: left;
   display: block;
-  margin-right: 2.35765%;
-  width: 31.76157%;
+  margin-right: 10.1484%;
+  width: 26.56773%;
 }
 
 body > header .back:last-child, body > header .members-area:last-child {
@@ -391,8 +392,8 @@ body > header .back:last-child, body > header .members-area:last-child {
 body > header .logo {
   float: left;
   display: block;
-  margin-right: 2.35765%;
-  width: 31.76157%;
+  margin-right: 10.1484%;
+  width: 26.56773%;
 }
 
 body > header .logo:last-child {
@@ -415,8 +416,8 @@ body > header .logo img {
 body > header .my-account {
   float: left;
   display: block;
-  margin-right: 2.35765%;
-  width: 31.76157%;
+  margin-right: 10.1484%;
+  width: 26.56773%;
 }
 
 body > header .my-account:last-child {
@@ -425,7 +426,7 @@ body > header .my-account:last-child {
 
 @media (max-width: 480px) {
   body > header .my-account {
-    margin-left: 34.11922%;
+    margin-left: 146.86453%;
   }
 }
 
@@ -960,40 +961,33 @@ body.experience main section.spoilers h1, body.experience main section.spoilers 
 }
 
 body.home > header {
-  background-image: url("../images/home/valence-and-image.png");
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
-  body.home > header {
-    background-image: url("../images/home/valence-and-image@3x.png");
-    background-size: cover;
-  }
-}
-
 body.home > header video {
-  position: fixed;
-  top: 50%;
-  left: 50%;
+  position: absolute;
+  top: 0;
   min-width: 100%;
   min-height: 100%;
   width: auto;
-  height: auto;
+  height: 100%;
   z-index: -100;
   -webkit-transform: translateX(-50%) translateY(-50%);
   -moz-transform: translateX(-50%) translateY(-50%);
   -ms-transform: translateX(-50%) translateY(-50%);
   -o-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
-  background: url(polina.jpg) no-repeat;
+  background-image: url("../images/posters/MPC_EST_489_1600kbps.png");
+  background-image: url("../images/posters/MPC_EST_489_1600kbps.png");
   background-size: cover;
 }
 
 @media (max-width: 720px) {
   body.home > header {
-    background: url(polina.jpg) #000 no-repeat center center fixed;
+    background-image: url("../images/posters/MPC_EST_489_1600kbps.png");
+    background-image: url("../images/posters/MPC_EST_489_1600kbps.png");
   }
   body.home > header video {
     display: none;
