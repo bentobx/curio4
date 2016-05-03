@@ -393,12 +393,13 @@ body {
       background-size: cover;
 
       video {
-        position: absolute;
-        top: 0;
+        position: fixed;
+        top: 50%;
+        left: 50%;
         min-width: 100%;
         min-height: 100%;
         width: auto;
-        height: 100%;
+        height: auto;
         z-index: -100;
         @include transform(translateX(-50%) translateY(-50%));
         @include background-image(url("../images/posters/MPC_EST_489_1600kbps.png") no-repeat 50% 50%);
@@ -541,7 +542,7 @@ body {
 
 footer {
   @include pad(default default 10em default);
-  border-top: 1px solid fade-out($greyish-brown,20%);
+  border-top: 1px solid fade-out($greyish-brown,.2);
 
   .terms-links {
     @include span-columns(1 of 2);
@@ -552,7 +553,7 @@ footer {
       font-size: $base-font-size * .8;
       text-transform: uppercase;
       text-decoration: underline;
-      &:hover,&:active,&:focus { color: darken($purple-brown,20%); }
+      &:hover,&:active,&:focus { color: darken($purple-brown,.2); }
     }
   }
   .contact-links {
