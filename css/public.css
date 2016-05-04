@@ -1147,159 +1147,8 @@ body.landing {
   background-size: cover;
 }
 
-body.landing.dark {
-  background: #000000;
-  background: #000000;
-  color: #fefefe;
-}
-
-body.landing.dark > header {
-  color: #ffffff;
-}
-
-body.landing.dark > header h1 {
-  color: #fefefe;
-  margin: 0;
-}
-
-body.landing.dark > header .intro p {
-  color: rgba(255, 255, 255, 0.8);
-}
-
-body.landing.dark section.copy-body .logo {
-  background: url("../images/logo/mpc-logo-reverse-wordmark-white@2x.png");
-  background: url("../images/logo/mpc-logo-reverse-wordmark-white@2x.png");
-  height: 121px;
-  width: 171px;
-}
-
-body.landing.dark section.copy-body .cta .button {
-  background: #FBF9F0;
-  color: #000000;
-  border-color: #000000;
-}
-
-body.landing.dark section.warning {
-  text-align: center;
-  float: none;
-  display: block;
-  margin: 0 auto;
-  border-top: solid 3px #c9bcb9;
-  border-bottom: solid 3px #c9bcb9;
-  padding: 4px 0;
-  margin-right: 0;
-  margin-right: auto;
-  margin-bottom: 1.77689em;
-  margin-left: 0;
-}
-
-body.landing.dark section.warning .warning-content {
-  padding: 2.35765%;
-  color: #c9bcb9;
-  border-top: solid 1px #c9bcb9;
-  border-bottom: solid 1px #c9bcb9;
-}
-
-body.landing.dark section.warning .warning-content :last-child {
-  margin: 0;
-}
-
-body.landing.dark section.warning .warning-content h1 {
-  color: #ffffff;
-  font-size: 1.8em;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-body.landing > header {
-  text-align: center;
-  min-height: auto;
-  text-align: center;
-  float: none;
-  display: block;
-  margin: 0 auto;
-}
-
-body.landing > header::after {
-  clear: both;
-  content: "";
-  display: table;
-}
-
-body.landing > header h1 {
-  font-size: 3.4em;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-}
-
-@media (max-width: 720px) {
-  body.landing > header h1 {
-    font-size: 2.8em;
-  }
-}
-
-body.landing > header .intro {
-  text-align: center;
-  float: none;
-  display: block;
-  margin: 0 auto;
-}
-
-body.landing > header .intro::after {
-  clear: both;
-  content: "";
-  display: table;
-}
-
-body.landing > header .intro p {
-  margin-left: 17.05961%;
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 65.88078%;
-  font-weight: 100;
-  font-size: 1.4em;
-}
-
-body.landing > header .intro p:last-child {
-  margin-right: 0;
-}
-
-@media (max-width: 720px) {
-  body.landing > header .intro p {
-    font-size: 1em;
-  }
-}
-
-body.landing#weeping-book {
-  height: 100%;
-  float: left;
-  position: absolute;
-}
-
-body.landing#weeping-book img.bg-animation {
-  z-index: -100;
-  position: fixed;
-  width: 100%;
-  left: 0;
-  bottom: 0;
-}
-
-body.landing main {
-  margin-top: 5.61023em;
-}
-
 body.landing section.copy-body {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
   margin-right: 0;
-}
-
-body.landing section.copy-body::after {
-  clear: both;
-  content: "";
-  display: table;
 }
 
 body.landing section.copy-body p, body.landing section.copy-body h1, body.landing section.copy-body h2 {
@@ -1415,12 +1264,171 @@ body.landing section figure.quote:last-child {
 
 body.landing section figure.quote blockquote {
   margin: 0;
+}
+
+body.landing section figure.quote blockquote p {
+  margin: 0;
   font-family: "ff-tisa-sans-web-pro";
-  font-size: 1.77689em;
+  font-size: 0.75019em;
 }
 
 body.landing section figure figcaption {
   font-style: italic;
+}
+
+body.landing.dark {
+  background: #000000;
+  background: #000000;
+  color: #fefefe;
+}
+
+body.landing.dark > header {
+  color: #ffffff;
+}
+
+body.landing.dark > header h1 {
+  color: #fefefe;
+  margin: 0;
+}
+
+body.landing.dark > header .intro p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+body.landing.dark section.copy-body .logo {
+  background: url("../images/logo/mpc-logo-reverse-wordmark-white@2x.png");
+  background: url("../images/logo/mpc-logo-reverse-wordmark-white@2x.png");
+  height: 121px;
+  width: 171px;
+}
+
+body.landing.dark section.copy-body .cta .button {
+  background: #FBF9F0;
+  color: #000000;
+  border-color: #000000;
+}
+
+body.landing.dark section.warning {
+  margin-top: 1.77689em;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+  margin-left: 25.58941%;
+  padding: 4px 0;
+  margin-right: 0;
+  border-top: solid 3px #c9bcb9;
+  border-bottom: solid 3px #c9bcb9;
+}
+
+body.landing.dark section.warning::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+body.landing.dark section.warning:last-child {
+  margin-right: 0;
+}
+
+body.landing.dark section.warning .warning-content {
+  padding: 2.35765%;
+  color: #c9bcb9;
+  border-top: solid 1px #c9bcb9;
+  border-bottom: solid 1px #c9bcb9;
+}
+
+body.landing.dark section.warning .warning-content :last-child {
+  margin: 0;
+}
+
+body.landing.dark section.warning .warning-content h1 {
+  color: #ffffff;
+  font-size: 1.8em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+body.landing > header {
+  text-align: center;
+  min-height: auto;
+  text-align: center;
+  float: none;
+  display: block;
+  margin: 0 auto;
+}
+
+body.landing > header::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+body.landing > header h1 {
+  font-size: 3.15733em;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+@media (max-width: 720px) {
+  body.landing > header h1 {
+    font-size: 1.77689em;
+  }
+}
+
+body.landing > header .intro {
+  text-align: center;
+  float: none;
+  display: block;
+  margin: 0 auto;
+}
+
+body.landing > header .intro::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+body.landing > header .intro p {
+  margin-left: 17.05961%;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 65.88078%;
+  font-weight: 100;
+  font-size: 1.77689em;
+}
+
+body.landing > header .intro p:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 720px) {
+  body.landing > header .intro p {
+    font-size: 1.333em;
+    font-size: 1em;
+  }
+}
+
+body.landing#weeping-book {
+  height: 100%;
+  float: left;
+  position: absolute;
+}
+
+body.landing#weeping-book img.bg-animation {
+  z-index: -100;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+
+body.landing main {
+  margin-top: 5.61023em;
 }
 
 .mysterious-key {

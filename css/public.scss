@@ -472,118 +472,13 @@ body {
   }
   &.landing {
     @include pad(flex-gutter());
+
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
-
-    &.dark {
-      @include background($black);
-      color: $white-two;
-      &> header {
-        color: $white;
-        h1 {
-          color: $white-two;
-          @include margin(0);
-        }
-        .intro {
-          p {
-            color: fade-out($white,.2);
-          }
-        }
-      }
-      section {
-        &.copy-body {
-          .logo {
-            @include background(url('../images/logo/mpc-logo-reverse-wordmark-white@2x.png'));
-            height: 121px;
-            width: 171px;
-          }
-          .cta {
-            .button {
-              $action-color: #FBF9F0;
-              background: $action-color;
-              color: $black;
-              border-color: $black;
-            }
-          }
-        }
-        &.warning {
-
-            @include center-block;
-            border-top: solid 3px lighten($greyish-brown,50%);
-            border-bottom: solid 3px lighten($greyish-brown,50%);
-            @include pad(4px 0);
-            @include omega();
-            @include margin(null auto modular-scale($perfect-fourth) 0);
-          .warning-content {
-
-            @include pad(default);
-            color: lighten($greyish-brown,50%);
-            border-top: solid 1px lighten($greyish-brown,50%);
-            border-bottom: solid 1px lighten($greyish-brown,50%);
-            :last-child {
-              margin: 0;
-            }
-            h1 {
-              color: $white;
-              font-size: $base-font-size * 1.8;
-              text-transform: uppercase;
-              letter-spacing: 2px;
-            }
-          }
-        }
-      }
-    }
-
-    &> header {
-      text-align: center;
-      min-height: auto;
-      @include center-block;
-      @include clearfix;
-
-      h1 {
-        font-size: $base-font-size * 3.4;
-        text-transform: uppercase;
-        letter-spacing: 4px;
-        @include media('<=medium') {
-          font-size: $base-font-size * 2.8;
-        }
-      }
-      .intro {
-        @include center-block;
-        @include clearfix;
-        p {
-          @include shift(2 of 12);
-          @include span-columns(8);
-          font-weight: 100;
-          font-size: $base-font-size * 1.4;
-          @include media('<=medium') {
-            font-size: $base-font-size;
-          }
-        }
-      }
-    }
-
-
-    &#weeping-book {
-      height: 100%;
-      float: left;
-      position: absolute;
-
-      img.bg-animation {
-        z-index: -100;
-        position: fixed;
-        width: 100%;
-        left: 0;
-        bottom: 0;
-      }
-    }
-    main {
-      margin-top: modular-scale(6)
-    }
     section {
       &.copy-body {
-        @include outer-container;
+
         @include omega();
         p,h1,h2 {
           text-align: center;
@@ -643,8 +538,12 @@ body {
           }
           blockquote {
             @include margin(0);
-            font-family: $sans-font-family;
-            font-size: modular-scale($perfect-fourth)
+            p {
+              @include margin(0);
+              font-family: $sans-font-family;
+              font-size: modular-scale(-1);
+
+            }
           }
         }
         figcaption {
@@ -652,6 +551,115 @@ body {
         }
       }
     }
+    &.dark {
+      @include background($black);
+      color: $white-two;
+      &> header {
+        color: $white;
+        h1 {
+          color: $white-two;
+          @include margin(0);
+        }
+        .intro {
+          p {
+            color: fade-out($white,.2);
+          }
+        }
+      }
+      section {
+        &.copy-body {
+          .logo {
+            @include background(url('../images/logo/mpc-logo-reverse-wordmark-white@2x.png'));
+            height: 121px;
+            width: 171px;
+          }
+          .cta {
+            .button {
+              $action-color: #FBF9F0;
+              background: $action-color;
+              color: $black;
+              border-color: $black;
+            }
+          }
+        }
+        &.warning {
+          margin-top: modular-scale($perfect-fourth);
+          @include outer-container(100%);
+          @include span-columns(6);
+          @include shift(3);
+          @include pad(4px 0);
+          @include omega();
+
+          border-top: solid 3px lighten($greyish-brown,50%);
+          border-bottom: solid 3px lighten($greyish-brown,50%);
+          .warning-content {
+
+            @include pad(default);
+            color: lighten($greyish-brown,50%);
+            border-top: solid 1px lighten($greyish-brown,50%);
+            border-bottom: solid 1px lighten($greyish-brown,50%);
+            :last-child {
+              margin: 0;
+            }
+            h1 {
+              color: $white;
+              font-size: $base-font-size * 1.8;
+              text-transform: uppercase;
+              letter-spacing: 2px;
+            }
+          }
+        }
+      }
+    }
+
+    &> header {
+      text-align: center;
+      min-height: auto;
+      @include center-block;
+      @include clearfix;
+
+      h1 {
+        font-size: modular-scale(4);
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        @include media('<=medium') {
+          font-size: modular-scale(2)
+        }
+      }
+      .intro {
+        @include center-block;
+        @include clearfix;
+        p {
+          @include shift(2 of 12);
+          @include span-columns(8);
+          font-weight: 100;
+          font-size: modular-scale(2);
+          @include media('<=medium') {
+            font-size: modular-scale(1);
+            font-size: $base-font-size;
+          }
+        }
+      }
+    }
+
+
+    &#weeping-book {
+      height: 100%;
+      float: left;
+      position: absolute;
+
+      img.bg-animation {
+        z-index: -100;
+        position: fixed;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+      }
+    }
+    main {
+      margin-top: modular-scale(6)
+    }
+
   }
 }
 
