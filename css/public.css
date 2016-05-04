@@ -357,6 +357,16 @@ body > header {
   width: 100%;
 }
 
+@media (max-width: 480px) {
+  body > header {
+    min-height: 260px;
+  }
+}
+
+body > header#img-header {
+  min-height: 360px;
+}
+
 body > header a {
   color: rgba(255, 255, 255, 0.8);
   font-family: "ff-tisa-sans-web-pro";
@@ -399,6 +409,18 @@ body > header .logo {
 
 body > header .logo:last-child {
   margin-right: 0;
+}
+
+@media (max-width: 480px) {
+  body > header .logo {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 40.29137%;
+  }
+  body > header .logo:last-child {
+    margin-right: 0;
+  }
 }
 
 body > header .logo img {
@@ -965,22 +987,28 @@ body.home > header {
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
+  background-image: linear-gradient(to bottom, #000000, transparent 40%);
+  position: relative;
+  overflow: hidden;
 }
 
-body.home > header video {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
+body.home > header .video-bg {
+  position: absolute;
+  height: 100%;
+  width: 200%;
+  left: -50%;
+}
+
+body.home > header .video-bg video {
+  position: absolute;
+  top: -99999px;
+  bottom: -99999px;
+  left: -99999px;
+  right: -99999px;
+  margin: auto;
   min-height: 100%;
-  width: auto;
-  height: auto;
+  min-width: 50%;
   z-index: -100;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -o-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
   background-image: url("../images/posters/MPC_EST_489_1600kbps.png");
   background-image: url("../images/posters/MPC_EST_489_1600kbps.png");
   background-size: cover;

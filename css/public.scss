@@ -22,6 +22,10 @@ body {
     @include pad();
     @include omega();
     min-height: 560px;
+    @include media('<=small') { min-height: 260px; }
+    &#img-header {
+      min-height: 360px;
+    }
     width: 100%;
     a {
       @extend %p;
@@ -45,14 +49,17 @@ body {
     }
     .logo {
       @include span-columns(1 of 3);
+      @include media('<=small') {
+        @include span-columns(5 of 12);
+      }
       img {
-        @include media('<=small') {
-          float: left;
-        }
         display: block;
         margin: 0 auto;
         float: none;
         text-align: center;
+        @include media('<=small') {
+          float: left;
+        }
       }
     }
     .my-account {
@@ -391,19 +398,28 @@ body {
       background-position: 50% 50%;
       background-repeat: no-repeat;
       background-size: cover;
-
-      video {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
-        z-index: -100;
-        @include transform(translateX(-50%) translateY(-50%));
-        @include background-image(url("../images/posters/MPC_EST_489_1600kbps.png") no-repeat 50% 50%);
-        background-size: cover;
+      background-image: linear-gradient(to bottom, $black, rgba(0, 0, 0, 0.0) 40%);
+      position: relative;
+      overflow: hidden;
+      .video-bg {
+        position:absolute;
+        height:100%;
+        width:200%;
+        left:-50%;
+        video {
+          position:absolute;
+          top: -99999px;
+          bottom: -99999px;
+          left: -99999px;
+          right: -99999px;
+          margin: auto;
+          min-height:100%;
+          min-width:50%;
+          z-index: -100;
+          // @include transform(translateX(-50%) translateY(-50%));
+          @include background-image(url("../images/posters/MPC_EST_489_1600kbps.png") no-repeat 50% 50%);
+          background-size: cover;
+        }
       }
     }
 
