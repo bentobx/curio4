@@ -12,6 +12,13 @@ $dark-slate-blue: #162e57;
 $tomato: #e03e1b;
 $tomato-50: fade-out($tomato, .5);
 
+@mixin center-block {
+  text-align: center;
+  float: none;
+  display: block;
+  margin: 0 auto;
+}
+
 
 // status colours
 $status-inactive: #bc633c;

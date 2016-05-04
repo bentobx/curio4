@@ -965,10 +965,6 @@ body.experience main section.copy-body figure.quote blockquote {
   margin: 0;
 }
 
-body.experience main section.copy-body figure.quote figcaption::before {
-  content: "— ";
-}
-
 body.experience main section.spoilers {
   padding: 0;
 }
@@ -1144,6 +1140,289 @@ body.home main section.copy-body .block h2 {
   letter-spacing: 1px;
 }
 
+body.landing {
+  padding: 2.35765%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body.landing.dark {
+  background: #000000;
+  background: #000000;
+  color: #fefefe;
+}
+
+body.landing.dark > header {
+  color: #ffffff;
+}
+
+body.landing.dark > header h1 {
+  color: #fefefe;
+  margin: 0;
+}
+
+body.landing.dark > header .intro p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+body.landing.dark section.copy-body .logo {
+  background: url("../images/logo/mpc-logo-reverse-wordmark-white@2x.png");
+  background: url("../images/logo/mpc-logo-reverse-wordmark-white@2x.png");
+  height: 121px;
+  width: 171px;
+}
+
+body.landing.dark section.copy-body .cta .button {
+  background: #FBF9F0;
+  color: #000000;
+  border-color: #000000;
+}
+
+body.landing.dark section.warning {
+  text-align: center;
+  float: none;
+  display: block;
+  margin: 0 auto;
+  border-top: solid 3px #c9bcb9;
+  border-bottom: solid 3px #c9bcb9;
+  padding: 4px 0;
+  margin-right: 0;
+  margin-right: auto;
+  margin-bottom: 1.77689em;
+  margin-left: 0;
+}
+
+body.landing.dark section.warning .warning-content {
+  padding: 2.35765%;
+  color: #c9bcb9;
+  border-top: solid 1px #c9bcb9;
+  border-bottom: solid 1px #c9bcb9;
+}
+
+body.landing.dark section.warning .warning-content :last-child {
+  margin: 0;
+}
+
+body.landing.dark section.warning .warning-content h1 {
+  color: #ffffff;
+  font-size: 1.8em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+body.landing > header {
+  text-align: center;
+  min-height: auto;
+  text-align: center;
+  float: none;
+  display: block;
+  margin: 0 auto;
+}
+
+body.landing > header::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+body.landing > header h1 {
+  font-size: 3.4em;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+@media (max-width: 720px) {
+  body.landing > header h1 {
+    font-size: 2.8em;
+  }
+}
+
+body.landing > header .intro {
+  text-align: center;
+  float: none;
+  display: block;
+  margin: 0 auto;
+}
+
+body.landing > header .intro::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+body.landing > header .intro p {
+  margin-left: 17.05961%;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 65.88078%;
+  font-weight: 100;
+  font-size: 1.4em;
+}
+
+body.landing > header .intro p:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 720px) {
+  body.landing > header .intro p {
+    font-size: 1em;
+  }
+}
+
+body.landing#weeping-book {
+  height: 100%;
+  float: left;
+  position: absolute;
+}
+
+body.landing#weeping-book img.bg-animation {
+  z-index: -100;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+
+body.landing main {
+  margin-top: 5.61023em;
+}
+
+body.landing section.copy-body {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-right: 0;
+}
+
+body.landing section.copy-body::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+body.landing section.copy-body p, body.landing section.copy-body h1, body.landing section.copy-body h2 {
+  text-align: center;
+}
+
+body.landing section.copy-body .logo {
+  background: url("../images/logo/mpc-logo-black-wordmark.png");
+  background: url("../images/logo/mpc-logo-black-wordmark.png");
+  height: 187px;
+  width: 230px;
+}
+
+body.landing section.copy-body .logo, body.landing section.copy-body .cta {
+  display: block;
+  text-align: center;
+  float: none;
+  display: block;
+  margin: 0 auto;
+}
+
+body.landing section.copy-body .logo::after, body.landing section.copy-body .cta::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+body.landing section.copy-body .logo img, body.landing section.copy-body .cta img {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%;
+  margin-left: 34.11922%;
+}
+
+body.landing section.copy-body .logo img:last-child, body.landing section.copy-body .cta img:last-child {
+  margin-right: 0;
+}
+
+body.landing section.copy-body .cta {
+  margin: 2em auto;
+  margin: 1.77689em auto;
+}
+
+body.landing section.copy-body .cta .button {
+  border-radius: 4px;
+  margin-right: auto;
+  margin-bottom: 1.77689em;
+  margin-left: auto;
+}
+
+body.landing section.copy-body .cta a.more {
+  font-style: italic;
+  color: inherit;
+  text-decoration: underline;
+}
+
+body.landing section.copy-body .cta::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+body.landing section.copy-body a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+body.landing section.copy-body a:hover, body.landing section.copy-body a:active, body.landing section.copy-body a:focus {
+  color: #ffffff;
+}
+
+body.landing section.copy-body h2 {
+  text-align: center;
+  font-variant: small-caps;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+body.landing section figure {
+  text-align: center;
+  float: none;
+  display: block;
+  margin: 0 auto;
+}
+
+body.landing section figure.quote {
+  padding: 2.35765%;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+  margin-left: 25.58941%;
+}
+
+body.landing section figure.quote:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 720px) {
+  body.landing section figure.quote {
+    padding: 0;
+    margin: 0 auto 1em;
+    text-align: center;
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%;
+  }
+  body.landing section figure.quote:last-child {
+    margin-right: 0;
+  }
+}
+
+body.landing section figure.quote blockquote {
+  margin: 0;
+  font-family: "ff-tisa-sans-web-pro";
+  font-size: 1.77689em;
+}
+
+body.landing section figure figcaption {
+  font-style: italic;
+}
+
 .mysterious-key {
   width: 59px;
   height: 24px;
@@ -1206,37 +1485,37 @@ body.home main section.copy-body .block h2 {
   display: block;
 }
 
-.footer-2 {
+.footer {
   display: inline-block;
   padding: 1.5em;
   width: 100%;
   border-top: 1px solid rgba(74, 60, 57, 0.2);
 }
 
-.footer-2 .footer-logo {
+.footer .footer-logo {
   margin-bottom: 1em;
   margin-right: 1em;
 }
 
 @media (min-width: 960px) {
-  .footer-2 .footer-logo {
+  .footer .footer-logo {
     float: left;
     margin-bottom: 0;
   }
 }
 
-.footer-2 .footer-logo img {
+.footer .footer-logo img {
   height: 3.6em;
 }
 
-.footer-2 ul {
+.footer ul {
   line-height: 1.5em;
   margin: 0 0 1em 0;
   padding: 0;
 }
 
 @media (min-width: 960px) {
-  .footer-2 ul {
+  .footer ul {
     float: left;
     line-height: 3.6em;
     margin-bottom: 0;
@@ -1244,49 +1523,49 @@ body.home main section.copy-body .block h2 {
   }
 }
 
-.footer-2 ul li {
+.footer ul li {
   list-style: none;
   padding-right: 1em;
 }
 
 @media (min-width: 960px) {
-  .footer-2 ul li {
+  .footer ul li {
     display: inline;
     text-align: left;
   }
 }
 
-.footer-2 ul li a {
+.footer ul li a {
   color: rgba(0, 0, 0, 0.8);
   text-decoration: none;
 }
 
-.footer-2 ul li a:focus, .footer-2 ul li a:hover {
+.footer ul li a:focus, .footer ul li a:hover {
   color: black;
 }
 
 @media (min-width: 960px) {
-  .footer-2 .footer-secondary-links {
+  .footer .footer-secondary-links {
     float: right;
   }
 }
 
-.footer-2 .footer-secondary-links li {
+.footer .footer-secondary-links li {
   font-size: 0.8em;
 }
 
-.footer-2 .footer-secondary-links ul.footer-social {
+.footer .footer-secondary-links ul.footer-social {
   margin: 1em 0 0 0;
 }
 
 @media (min-width: 960px) {
-  .footer-2 .footer-secondary-links ul.footer-social {
+  .footer .footer-secondary-links ul.footer-social {
     float: right;
     margin-top: 0;
   }
 }
 
-.footer-2 .footer-secondary-links ul.footer-social li {
+.footer .footer-secondary-links ul.footer-social li {
   float: left;
   font-size: 1em;
   line-height: 0;
@@ -1294,20 +1573,20 @@ body.home main section.copy-body .block h2 {
   padding-right: 0.7em;
 }
 
-.footer-2 .footer-secondary-links ul.footer-social li:last-child {
+.footer .footer-secondary-links ul.footer-social li:last-child {
   padding-right: 0;
 }
 
-.footer-2 .footer-secondary-links ul.footer-social li a {
+.footer .footer-secondary-links ul.footer-social li a {
   line-height: 3.6em;
 }
 
-.footer-2 .footer-secondary-links ul.footer-social img {
+.footer .footer-secondary-links ul.footer-social img {
   height: 3.6em;
   padding: 1px;
 }
 
-.footer-2 .footer-secondary-links ul.footer-social img:focus, .footer-2 .footer-secondary-links ul.footer-social img:hover {
+.footer .footer-secondary-links ul.footer-social img:focus, .footer .footer-secondary-links ul.footer-social img:hover {
   opacity: 1;
 }
 
@@ -1398,7 +1677,7 @@ body.home main section.copy-body .block h2 {
   right: 0;
 }
 
-@media (min-width: 720px) {
+@media (min-width: 481px) {
   .mobile-nav-button {
     display: none;
   }
@@ -1406,4 +1685,8 @@ body.home main section.copy-body .block h2 {
 
 .mobile-nav-button img {
   height: 1.3em;
+}
+
+figcaption::before {
+  content: "— ";
 }

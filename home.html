@@ -10,11 +10,8 @@
   <link rel="stylesheet" href="css/public.css">
 </head>
 <body class="home">
-
-
   <!-- for image header, use inline style here if updating frequently -->
   <!-- <header style="background-image: url('../images/posters/MPC_EST_489_1600kbps.png')" id="img-header"> -->
-
   <header>
     <div class="video-bg">
       <!-- full height video header -->
@@ -33,9 +30,6 @@
             <i class="fa fa-bars fa-lg" aria-hidden="true" title="Toggle navigation"></i>
           </button>
         </div>
-
-
-
       </header>
       <main>
         <section class="strip">
@@ -56,10 +50,8 @@
         </section>
         <span class="mysterious-key divider"></span>
         <section class="copy-body">
-
           <div class="block item">
             <h2>Curios &amp; Conundrums</h2>
-
             <div class="image-gradient-dynamic">
               <img src="images/home/blocks/item-image@2x.png" alt="">
               <div class="overlay"></div>
@@ -67,7 +59,6 @@
                 <p><a href="" class="more">Quarterly to your door</a></p>
               </div>
             </div>
-
           </div>
           <div class="block experience">
             <h2>A Mesoamerica Experience</h2>
@@ -78,14 +69,11 @@
                 <p><a href="" class="more">Stirring from the soil…</a></p>
               </div>
             </div>
-
           </div>
         </section>
-
       </main>
-
-
-      <footer class="footer-2" role="contentinfo">
+      <!-- footer module -->
+      <footer class="footer" role="contentinfo">
         <div class="footer-logo">
           <img src="images/logo/mpc-logo-black-horizontal-transparent@2x.png" alt="The Mysterious Package Company Logo" id="footer-logo">
         </div>
@@ -94,13 +82,11 @@
           <li><a href="javascript:void(0)">Contact</a></li>
           <li><a href="javascript:void(0)">Products</a></li>
         </ul>
-
         <div class="footer-secondary-links">
           <ul>
             <li><a href="javascript:void(0)">Terms and Conditions</a></li>
             <li><a href="javascript:void(0)">Privacy Policy</a></li>
           </ul>
-
           <ul class="footer-social">
             <li>
               <a href="javascript:void(0)">
@@ -125,10 +111,7 @@
         </ul>
       </div>
     </footer>
-
-
-
-
+    <!-- mobile nav module -->
     <nav class="js-menu mobile-nav-content">
       <ul>
         <li><a href="javascript:void(0)">My Account</a></li>
@@ -137,23 +120,12 @@
         <li><a href="javascript:void(0)">Details</a></li>
       </ul>
     </nav>
-
     <div class="js-menu-screen mobile-nav-fade-screen"></div>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-
     <!--@TODO: MPC: update with your own kit ID  -->
     <script src="https://use.typekit.net/xfy3uwm.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
-    <script type="text/javascript">
-    $(document).ready(function(){
-      $('.mobile-nav-button,.mobile-nav-fade-screen,.mobile-nav-close').on('click touchstart',function (e) {
-        $('.mobile-nav-content,.mobile-nav-fade-screen').toggleClass('is-visible');
-        e.preventDefault();
-      });
-    });
-
-
-    </script>
-  </body>
-  </html>
+    <script src="js/scripts.js"></script>
+  </script>
+</body>
+</html>

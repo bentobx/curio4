@@ -1,21 +1,17 @@
 @import "base";
-
 $gutter: modular-scale(2, 2em, $golden) !default;
-
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
   position: relative;
 }
-
 h1 { @extend %h; }
 h2 { @extend %sh; }
 h3 { @extend %ssh; }
 blockquote { @extend %bq; }
 p { @extend %p; }
 small { @extend %small; }
-
 body {
   background-color: #FBF9F0;
   &> header {
@@ -67,15 +63,13 @@ body {
       @include media('<=small') {
         @include span-columns(7 of 12);
       }
-       .application-button {
-         @include media('<=small') {
-           display:none;
-         }
-
-       }
+      .application-button {
+        @include media('<=small') {
+          display:none;
+        }
+      }
       .button { float: right; }
     }
-
     nav {
       @include row();
       @include span-columns(12, block);
@@ -101,10 +95,8 @@ body {
         justify-content: left;
         background-position: 50% 50%;
         background-size: cover;
-
         // Use if not including gradient in image source
         // @include background-image(linear-gradient(to right, $greyish-brown, rgba(0, 0, 0, 0.0));
-
         // Use if including image on page as an alternative; inline style is probably easier to manage
         // img { position: relative; z-index: 0; top: 50%; left: 50%; }
         .description {
@@ -115,7 +107,6 @@ body {
             font-size: 1.75em;
             &.more {
               font-size: 1.25em;
-
               a {
                 text-decoration: underline;
                 color: fade-out($white,.2);
@@ -146,7 +137,6 @@ body {
           font-size: 20px;
           font-weight: 400;
           width: 100%;
-
           p {
             color: $white-two;
             &:last-child { margin: 0; }
@@ -155,7 +145,6 @@ body {
       }
     }
   }
-
   &.experience {
     // customize here for each experience, e.g.:
     &#the-king-in-yellow {
@@ -163,14 +152,11 @@ body {
         @include retina-image('../images/header-image', cover, 'png', '../images/header-image@3x');
       }
     }
-
     &> header {
       background-position: 50% 50%;
       background-repeat: no-repeat;
       background-size: cover;
       @include background-image(linear-gradient(to bottom, $black, rgba(0, 0, 0, 0.0) 40%));
-
-
     }
     h1 {
       font-family: $heading-font-family;
@@ -220,12 +206,10 @@ body {
               font-size: 24px;
             }
             :first-child {
-
               font-variant: small-caps;
               font-weight: 900;
               font-size: 36px;
               line-height: 1.1em;
-
             }
           }
           .purchase {
@@ -264,7 +248,6 @@ body {
             @include pad(default);
             text-align: center;
             background: $tomato;
-
             h4 {
               color: $white
             }
@@ -326,7 +309,6 @@ body {
                 .envelope { background-image: url(../images/deliveries-sprites/envelope@2x.png); }
                 .crate { background-image: url(../images/deliveries-sprites/crate@2x.png); }
               }
-
             }
           }
         }
@@ -357,9 +339,7 @@ body {
               blockquote {
                 @include margin(0);
               }
-              figcaption::before {
-                content: "— ";
-              }
+
               float: right;
             }
             font-style: italic;
@@ -445,7 +425,6 @@ body {
         }
       }
     }
-
     @include media('<=medium') {
       &> header {
         @include background-image(url("../images/posters/MPC_EST_489_1600kbps.png") no-repeat 50% 50%);
@@ -454,7 +433,6 @@ body {
         }
       }
     }
-
     &.strip {
       height: auto;
       display: -webkit-flex;
@@ -480,7 +458,6 @@ body {
               text-decoration: underline;
               color: fade-out($white,.2);
               &:hover,&:active,&:focus { color: $white; }
-
             }
             h2 {
               text-align: center;
@@ -493,9 +470,192 @@ body {
       }
     }
   }
+  &.landing {
+    @include pad(flex-gutter());
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &.dark {
+      @include background($black);
+      color: $white-two;
+      &> header {
+        color: $white;
+        h1 {
+          color: $white-two;
+          @include margin(0);
+        }
+        .intro {
+          p {
+            color: fade-out($white,.2);
+          }
+        }
+      }
+      section {
+        &.copy-body {
+          .logo {
+            @include background(url('../images/logo/mpc-logo-reverse-wordmark-white@2x.png'));
+            height: 121px;
+            width: 171px;
+          }
+          .cta {
+            .button {
+              $action-color: #FBF9F0;
+              background: $action-color;
+              color: $black;
+              border-color: $black;
+            }
+          }
+        }
+        &.warning {
+
+            @include center-block;
+            border-top: solid 3px lighten($greyish-brown,50%);
+            border-bottom: solid 3px lighten($greyish-brown,50%);
+            @include pad(4px 0);
+            @include omega();
+            @include margin(null auto modular-scale($perfect-fourth) 0);
+          .warning-content {
+
+            @include pad(default);
+            color: lighten($greyish-brown,50%);
+            border-top: solid 1px lighten($greyish-brown,50%);
+            border-bottom: solid 1px lighten($greyish-brown,50%);
+            :last-child {
+              margin: 0;
+            }
+            h1 {
+              color: $white;
+              font-size: $base-font-size * 1.8;
+              text-transform: uppercase;
+              letter-spacing: 2px;
+            }
+          }
+        }
+      }
+    }
+
+    &> header {
+      text-align: center;
+      min-height: auto;
+      @include center-block;
+      @include clearfix;
+
+      h1 {
+        font-size: $base-font-size * 3.4;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        @include media('<=medium') {
+          font-size: $base-font-size * 2.8;
+        }
+      }
+      .intro {
+        @include center-block;
+        @include clearfix;
+        p {
+          @include shift(2 of 12);
+          @include span-columns(8);
+          font-weight: 100;
+          font-size: $base-font-size * 1.4;
+          @include media('<=medium') {
+            font-size: $base-font-size;
+          }
+        }
+      }
+    }
+
+
+    &#weeping-book {
+      height: 100%;
+      float: left;
+      position: absolute;
+
+      img.bg-animation {
+        z-index: -100;
+        position: fixed;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+      }
+    }
+    main {
+      margin-top: modular-scale(6)
+    }
+    section {
+      &.copy-body {
+        @include outer-container;
+        @include omega();
+        p,h1,h2 {
+          text-align: center;
+        }
+        .logo {
+          @include background(url('../images/logo/mpc-logo-black-wordmark.png'));
+          height: 187px;
+          width: 230px;
+        }
+
+        .logo, .cta {
+          @include row(block, $default-layout-direction);
+          img {
+            @include span-columns(4);
+            @include shift(4);
+          }
+          @include center-block;
+        }
+        .cta {
+          @include margin(2em auto);
+          @include margin(modular-scale($perfect-fourth) auto);
+
+          .button {
+            border-radius: 4px;
+            @include margin(null auto modular-scale($perfect-fourth) auto);
+
+          }
+          a.more {
+            font-style: italic;
+            color: inherit;
+            text-decoration: underline;
+          }
+          @include clearfix;
+        }
+        a {
+          color: fade-out($white,.2);
+          &:hover,&:active,&:focus { color: $white; }
+        }
+        h2 {
+          text-align: center;
+          font-variant: small-caps;
+          font-weight: 900;
+          letter-spacing: 1px;
+        }
+      }
+      figure {
+        @include center-block;
+        &.quote {
+          @include pad();
+          @include span-columns(6);
+          @include shift(3);
+          @include media('<=medium') {
+            @include pad(0);
+            @include margin(0 auto 1em auto);
+            text-align: center;
+            @include span-columns(12);
+          }
+          blockquote {
+            @include margin(0);
+            font-family: $sans-font-family;
+            font-size: modular-scale($perfect-fourth)
+          }
+        }
+        figcaption {
+          font-style: italic;
+        }
+      }
+    }
+  }
 }
 
-
+// reusable widgets
 .mysterious-key {
   width: 59px;
   height: 24px;
@@ -506,8 +666,6 @@ body {
     @include row();
   }
 }
-
-
 .image-gradient-dynamic {
   $image-gradient-color-top: $sienna;
   $transparency-top: 0.8;
@@ -519,11 +677,9 @@ body {
   // $image-gradient-color-right: yellow;
   // $transparency-right: 0.8;
   // $horizontal-angle: 90deg;
-
   line-height: 0;
   position: relative;
   width: 100%;
-
   img {
     height: auto;
     left: 0;
@@ -531,7 +687,6 @@ body {
     top: 0;
     width: 100%;
   }
-
   .copy {
     left: 50%;
     width: 100%;
@@ -549,7 +704,6 @@ body {
       position: relative;
     }
   }
-
   .overlay {
     @include position(absolute, 0);
     background-color: transparentize(
@@ -561,82 +715,34 @@ body {
     transparentize($image-gradient-color-bottom, $transparency-bottom)
     );
     display: block;
-
-    // &::after {
-    //   @include position(absolute, 0);
-    //   background-color: transparentize(
-    //     $image-gradient-color-left,
-    //     $transparency-right
-    //   );
-    //   background-image: linear-gradient($horizontal-angle,
-    //     transparentize($image-gradient-color-left, $transparency-left),
-    //     transparentize($image-gradient-color-right, $transparency-right)
-    //   );
-    //   content: "";
-    //   display: block;
-    // }
   }
 }
 
-// Uncomment this for a sticky footer.
-//
-// .wrapper-for-content-outside-of-footer {
-//   min-height: 100%;
-//   height: auto !important;
-//   height: 100%;
-//   margin: 0 auto -4em;
-// }
-
-// html, body {
-//  height: 100%;
-// }
-
-// .wrapper-for-content-outside-of-footer::after {
-//   content: "";
-//   display: block;
-// }
-
-// .footer-2, .wrapper-for-content-outside-of-footer::after {
-//   height: 17em;
-
-//   @include media('>=large') {
-//     height: 4em;
-//   }
-// }
-
-
-
-
-.footer-2 {
+// primary footer
+.footer {
   $base-spacing: 3.6em !default;
   $footer-background: desaturate(darken($action-color, 20%), 30%);
   $footer-color: $black;
   $footer-link-color: transparentize($footer-color, 0.2);
   $footer-disclaimer-color: transparentize($footer-color, 0.6);
-
   display: inline-block;
   padding: $base-spacing;
   width: 100%;
-
   .footer-logo {
     margin-bottom: 1em;
     margin-right: 1em;
-
     @include media('>=large') {
       float: left;
       margin-bottom: 0;
     }
   }
-
   .footer-logo img {
     height: 3.6em;
   }
-
   ul {
     line-height: 1.5em;
     margin: 0 0 1em 0;
     padding: 0;
-
     @include media('>=large') {
       float: left;
       line-height: 3.6em;
@@ -644,43 +750,34 @@ body {
       margin-left: 1em;
     }
   }
-
   ul li {
     list-style: none;
     padding-right: 1em;
-
     @include media('>=large') {
       display: inline;
       text-align: left;
     }
   }
-
   ul li a {
     color: $footer-link-color;
     text-decoration: none;
     &:focus, &:hover { color: transparentize($footer-color, 0); }
   }
-
   .footer-secondary-links {
     @include media('>=large') { float: right; }
-
     li { font-size: 0.8em; }
-
     ul.footer-social {
       margin: 1em 0 0 0;
-
       @include media('>=large') {
         float: right;
         margin-top: 0;
       }
-
       li {
         float: left;
         font-size: 1em;
         line-height: 0;
         margin: 0;
         padding-right: 0.7em;
-
         &:first-child {
           @include media('<=small') {
             span {
@@ -693,28 +790,21 @@ body {
           line-height: 3.6em;
         }
       }
-
       img {
         height: 3.6em;
         // opacity: 0.7;
         padding: 1px;
-
         &:focus, &:hover { opacity: 1; }
       }
     }
   }
   border-top: 1px solid fade-out($greyish-brown,.8);
 }
-
-
-
 // hamburger menu
-
 .mobile-nav-content {
   @include media('>=medium') {
     display: none;
   }
-
   $mobile-nav-border-color: $greyish-brown;
   $mobile-nav-background: lighten($mobile-nav-border-color, 5%);
   $mobile-nav-color: lighten($mobile-nav-border-color, 55%);
@@ -722,7 +812,6 @@ body {
   $mobile-nav-background-hover: $action-color;
   $mobile-nav-color-hover: #fff;
   $mobile-nav-background-focus: lighten($mobile-nav-background, 5%);
-
   @include position(fixed, 0 0 0 auto);
   @include size(220px 100%);
   background: $mobile-nav-background;
@@ -731,16 +820,13 @@ body {
   transform: translateX(380px);
   transition: all 0.25s linear;
   z-index: 999999;
-
   ul {
     padding: 0;
     margin: 0;
   }
-
   li {
     list-style: none;
   }
-
   li a {
     border-bottom: $mobile-nav-border;
     color: $mobile-nav-color;
@@ -751,25 +837,19 @@ body {
     font-family: $sans-font-family;
     text-transform: uppercase;
     font-weight: 100;
-
     &:hover,&:active,&:focus { color: $white; }
-
-
     &:focus {
       background-color: $mobile-nav-background-focus;
     }
-
     &:hover {
       background-color: $mobile-nav-background-hover;
       color: $mobile-nav-color-hover;
     }
   }
-
   &.is-visible {
     transform: translateX(0);
   }
 }
-
 .mobile-nav-fade-screen {
   @include position(fixed, 0);
   background: black;
@@ -777,15 +857,13 @@ body {
   transition: all 0.2s ease-in-out;
   visibility: hidden;
   z-index: 999998;
-
   &.is-visible {
     opacity: 0.4;
     visibility: visible;
   }
 }
-
 .mobile-nav-button {
-  @include media('>=medium') {
+  @include media('>small') {
     display: none;
   }
   // @include span-columns(4, block);
@@ -798,4 +876,7 @@ body {
   img {
     height: 1.3em;
   }
+}
+figcaption::before {
+  content: "— ";
 }
