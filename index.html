@@ -10,18 +10,28 @@
   <link rel="stylesheet" href="css/public.css">
 </head>
 <body class="experience" id="the-king-in-yellow">
-
   <header>
-    <div class="back"><small><a href="#">&larr; Back to members' area</a></small></div>
-    <div class="logo">
-      <img src="images/logo/opaque-logo.png" alt="">
-    </div>
-    <div class="my-account">
-      <a href="#" class="button">My Account</a>
-    </div>
+    <nav>
+      <div class="back"><small><a href="#">&larr; Back to members' area</a></small></div>
+      <div class="logo">
+        <img src="images/logo/opaque-logo.png" alt="">
+      </div>
+      <div class="my-account">
+        <!-- single button or hamburger menu -->
+        <!-- <a href="#" class="button">My Account</a> -->
+        <button type="button" class="button js-menu-trigger mobile-nav-button">
+          <i class="fa fa-bars fa-lg" aria-hidden="true" title="Toggle navigation"></i>
+        </button>
+      </div>
+    </nav>
   </header>
-
   <main>
+    <!-- optional embedded video -->
+    <section class="trailer">
+      <div class="video-wrapper">
+        <iframe src="https://player.vimeo.com/video/162137255" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
+    </section>
     <section class="strip">
       <button class="prev-btn">Previous Experience</button>
       <div class="description">
@@ -31,133 +41,148 @@
       </div>
       <button class="next-btn">Next Experience</button>
     </section>
-
     <section class="copy-intro">
       <div class="copy">
         <p>
           Late one evening, an obsidian wagon drawn by horses of a peculiar pallor arrived at our warehouse.
         </p>
-          <p>
+        <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
-      <div class="purchase">
-        <h4>Purchase</h4>
-        <span class="price">$199.99</span>
-        <div class="purchase-type">
-          <a href="" class="button">For Myself</a>
-          <a href="" class="button">As a Gift</a>
         </div>
-        <div class="warning">
-          <h4>Warning</h4>
-          <p>Experience has caused some building security to be suspicious!</p>
-          <p>This may cause delays in receiving your package.</p>
+        <div class="purchase">
+          <h4>Purchase</h4>
+          <span class="price">$199.99</span>
+          <div class="purchase-type">
+            <a href="" class="button">For Myself</a>
+            <a href="" class="button">As a Gift</a>
+          </div>
+          <div class="warning">
+            <h4>Warning</h4>
+            <p>Experience has caused some building security to be suspicious!</p>
+            <p>This may cause delays in receiving your package.</p>
+          </div>
         </div>
-      </div>
-    </section>
-
-    <section class="exp-particulars">
-      <div class="deliveries">
-        <h1>Deliveries</h1>
-        <ul>
-          <li class="glyph envelope"></li>
-          <li class="glyph envelope"></li>
-          <li class="glyph crate"></li>
-        </ul>
-      </div>
-      <div class="themes">
-        <h1>Themes</h1>
-        <ul>
-          <li>Weird Fiction</li>
-          <li>Eldritch Horror</li>
-        </ul>
-      </div>
-      <div class="audience">
-        <h1>Audience</h1>
-        <ul>
-          <li>Recommended 17+</li>
-          <li>Not recommended as a shared family experience.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="interstitial">
-
-    </section>
-
-    <section class="copy-body">
-      <figure class="quote">
-        <blockquote>My hands were trembling when I received the crate, I was so excited and trepidatious…!</blockquote>
-        <figcaption>Henry F., Member Since 2013</figcaption>
-      </figure>
-
-      <p>Our research into the source of this delivery weaves a strange and unexpected tale, one that we are prepared to offer to you in the spirit of friendship and mercantilism. The narrative reaches deeply into the works of Mr. Chambers and those with whom he associated, and sheds some light upon a single performance of a play that, quite literally, brought the house down. There are consequences to learning of these events, consequences that might lead you to question if what you see could possibly be real, and others to wonder if your sanity is beginning to wane.</p>
-
-      <p>Despite measures taken, the inscrutable legion has been relentless in leaving these effigies in our warehouse. As such, we shall continue to share The King in Yellow for as long as the supply of artifacts remains unceasing. Perhaps, with your assistance, we may one day be absolved of this responsibility.
-      </p>
-      <p>The King in Yellow is a unique experience comprised of three mailings, including two dramatic artifacts of great potency and import sealed safely within one of our hand-made wooden crates. Rounding our the experience are numerous weathered and aged background materials, documentation, and esoteric discoveries, providing knowledge of the Yellow King, his acolytes, and the writings surrounding them.
-      </p>
-      <p><em>Please, do not be alarmed when a heavy crate thrumming with arcane gravity arrives ominously upon your doorstep!</em>
-      </p>
-    </section>
-
-    <section class="spoilers">
-      <header>
-        <div class="spoiler-content">
-          <h1>Spoiler Warning!</h1>
-          <p>Activating this area will reveal the secrets of the King in Yellow!</p>
+      </section>
+      <section class="exp-particulars">
+        <div class="deliveries">
+          <h1>Deliveries</h1>
+          <ul>
+            <li class="glyph envelope"></li>
+            <li class="glyph envelope"></li>
+            <li class="glyph crate"></li>
+          </ul>
         </div>
-      </header>
-
+        <div class="themes">
+          <h1>Themes</h1>
+          <ul>
+            <li>Weird Fiction</li>
+            <li>Eldritch Horror</li>
+          </ul>
+        </div>
+        <div class="audience">
+          <h1>Audience</h1>
+          <ul>
+            <li>Recommended 17+</li>
+            <li>Not recommended as a shared family experience.</li>
+          </ul>
+        </div>
+      </section>
+      <section class="interstitial">
+      </section>
+      <section class="copy-body">
+        <figure class="quote">
+          <blockquote>My hands were trembling when I received the crate, I was so excited and trepidatious…!</blockquote>
+          <figcaption>Henry F., Member Since 2013</figcaption>
+        </figure>
+        <p>Our research into the source of this delivery weaves a strange and unexpected tale, one that we are prepared to offer to you in the spirit of friendship and mercantilism. The narrative reaches deeply into the works of Mr. Chambers and those with whom he associated, and sheds some light upon a single performance of a play that, quite literally, brought the house down. There are consequences to learning of these events, consequences that might lead you to question if what you see could possibly be real, and others to wonder if your sanity is beginning to wane.</p>
+        <p>Despite measures taken, the inscrutable legion has been relentless in leaving these effigies in our warehouse. As such, we shall continue to share The King in Yellow for as long as the supply of artifacts remains unceasing. Perhaps, with your assistance, we may one day be absolved of this responsibility.
+        </p>
+        <p>The King in Yellow is a unique experience comprised of three mailings, including two dramatic artifacts of great potency and import sealed safely within one of our hand-made wooden crates. Rounding our the experience are numerous weathered and aged background materials, documentation, and esoteric discoveries, providing knowledge of the Yellow King, his acolytes, and the writings surrounding them.
+        </p>
+        <p><em>Please, do not be alarmed when a heavy crate thrumming with arcane gravity arrives ominously upon your doorstep!</em>
+        </p>
+      </section>
+      <section class="spoilers">
+        <header>
+          <div class="spoiler-content">
+            <h1>Spoiler Warning!</h1>
+            <p>Activating this area will reveal the secrets of the King in Yellow!</p>
+          </div>
+        </header>
+        <ul>
+          <li class="mailing">
+            <img src="../images/header-image@2x.png" alt="">
+            <span class="caption">What mysteries await?</span>
+            <div class="description">
+              <h2>Mailing 1</h2>
+              <p>The adventure begins with an old, water damaged, but personalized letter from the dead letter office, containing some oblique references to censored art. There are also several pages from the play The King in Yellow, including a page from the long-lost Act II. This all arrives contained within a modern envelope, but without information on the sender.</p>
+            </div>
+          </li>
+          <li class="mailing">
+            <img src="../images/header-image@2x.png" alt="">
+            <span class="caption">What mysteries await?</span>
+            <div class="description">
+              <h2>Mailing 2</h2>
+              <p>A beautiful, letter-pressed and debossed playbill of the only known live performance of the play "The King in Yellow," dated from 1895. A newspaper article, outlining mysterious figures outside a prestigious theatre, accompanies a jauntily wrapped necklace, adorned with The Yellow Sign. While suitable for wearing, we cannot be responsible for the actions of those adorned with this symbol of great power and control.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <!-- footer module -->
+    <footer class="footer-2" role="contentinfo">
+      <div class="footer-logo">
+        <img src="images/logo/mpc-logo-black-horizontal-transparent@2x.png" alt="The Mysterious Package Company Logo" id="footer-logo">
+      </div>
       <ul>
-        <li class="mailing">
-          <img src="../images/header-image@2x.png" alt="">
-          <span class="caption">What mysteries await?</span>
-          <div class="description">
-
-            <h2>Mailing 1</h2>
-
-            <p>The adventure begins with an old, water damaged, but personalized letter from the dead letter office, containing some oblique references to censored art. There are also several pages from the play The King in Yellow, including a page from the long-lost Act II. This all arrives contained within a modern envelope, but without information on the sender.</p>
-
-          </div>
-
-        </li>
-        <li class="mailing">
-          <img src="../images/header-image@2x.png" alt="">
-          <span class="caption">What mysteries await?</span>
-
-          <div class="description">
-
-            <h2>Mailing 2</h2>
-
-
-            <p>A beautiful, letter-pressed and debossed playbill of the only known live performance of the play "The King in Yellow," dated from 1895. A newspaper article, outlining mysterious figures outside a prestigious theatre, accompanies a jauntily wrapped necklace, adorned with The Yellow Sign. While suitable for wearing, we cannot be responsible for the actions of those adorned with this symbol of great power and control.
-            </p>
-          </div>
-
+        <li><a href="javascript:void(0)">About</a></li>
+        <li><a href="javascript:void(0)">Contact</a></li>
+        <li><a href="javascript:void(0)">Products</a></li>
+      </ul>
+      <div class="footer-secondary-links">
+        <ul>
+          <li><a href="javascript:void(0)">Terms and Conditions</a></li>
+          <li><a href="javascript:void(0)">Privacy Policy</a></li>
+        </ul>
+        <ul class="footer-social">
+          <li>
+            <a href="javascript:void(0)">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-facebook fa-stack-1x"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-twitter fa-stack-1x"></i>
+              </span>
+            </a>
+          </li>
+          <li><a href="javascript:void(0)">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-instagram fa-stack-1x"></i>
+            </span>
+          </a>
         </li>
       </ul>
-
-    </section>
-  </main>
-
-
-
-  <nav></nav>
-  <footer></footer>
+    </div>
+  </footer>
+  <!-- mobile nav module -->
+  <nav class="js-menu mobile-nav-content">
+    <ul>
+      <li><a href="javascript:void(0)">My Account</a></li>
+      <li><a href="javascript:void(0)">Purchase</a></li>
+      <li><a href="javascript:void(0)">Gift</a></li>
+      <li><a href="javascript:void(0)">Details</a></li>
+    </ul>
+  </nav>
+  <div class="js-menu-screen mobile-nav-fade-screen"></div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-
   <!--@TODO: MPC: update with your own kit ID  -->
   <script src="https://use.typekit.net/xfy3uwm.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
-
-  <script type="text/javascript">
-  $(document).ready(function(){
-    $('.sliding-panel-button,.sliding-panel-fade-screen,.sliding-panel-close').on('click touchstart',function (e) {
-      $('.sliding-panel-content,.sliding-panel-fade-screen').toggleClass('is-visible');
-      e.preventDefault();
-    });
-  });
-
-  </script>
+  <script src="js/scripts.js"></script>
 </body>
 </html>
