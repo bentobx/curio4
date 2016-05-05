@@ -348,6 +348,7 @@ body, html {
 
 body {
   background-color: #FBF9F0;
+  background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/textures/inverted/double_lined.png"), linear-gradient(180deg, #FBF9F0, #FBF9F0), center no-repeat #FBF9F0 scroll;
 }
 
 body > header {
@@ -505,7 +506,7 @@ body main section {
 
 body main section.feature {
   padding: 0;
-  margin: 2em 0;
+  margin: 0 0 1.77689em;
   height: 300px;
   width: 100%;
   display: flex;
@@ -548,6 +549,7 @@ body main section.feature#message-from-the-curator {
 
 body main section.strip {
   display: block;
+  min-height: 200px;
   color: #ffffff;
   background: url("../images/logo/mpc-logo-black-transparent.png") 50% 50% no-repeat #4a3c39;
 }
@@ -782,7 +784,7 @@ body.experience main section.copy-intro .purchase .purchase-type .button:last-ch
 body.experience main section.copy-intro .warning {
   padding: 2.35765%;
   text-align: center;
-  background: #e03e1b;
+  background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/textures/inverted/subtle_zebra_3d.png"), linear-gradient(180deg, #e03e1b, #ee8973), center no-repeat #e03e1b scroll;
 }
 
 body.experience main section.copy-intro .warning h4 {
@@ -906,27 +908,27 @@ body.experience main section.exp-particulars div.deliveries ul .crate {
 }
 
 body.experience main section.interstitial {
-  padding: 2.35765%;
-  margin-bottom: 30px;
-  background: url("../images/header-image.png") no-repeat;
+  margin-bottom: 1.77689em;
+  background: url("../images/header-image.png") no-repeat 50% 50%;
   background-size: cover;
-  height: 400px;
+  height: 560px;
 }
 
 body.experience main section.copy-body {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 65.88078%;
+  float: none;
+  margin-left: 17.05961%;
 }
 
-body.experience main section.copy-body p:first-child::first-line {
+body.experience main section.copy-body:last-child {
+  margin-right: 0;
+}
+
+body.experience main section.copy-body p:first-line {
   font-weight: 900;
-}
-
-body.experience main section.copy-body::after {
-  clear: both;
-  content: "";
-  display: table;
 }
 
 body.experience main section.copy-body figure {
@@ -969,6 +971,12 @@ body.experience main section.spoilers {
   padding: 0;
 }
 
+body.experience main section.spoilers::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
 body.experience main section.spoilers header {
   background: url("../images/logo/m-p-c-black-logo.png") no-repeat 50% 110px, linear-gradient(rgba(224, 62, 27, 0.5), rgba(255, 0, 0, 0));
   text-align: center;
@@ -977,7 +985,6 @@ body.experience main section.spoilers header {
   border-top: solid 3px #c21e1e;
   border-bottom: solid 3px #c21e1e;
   padding: 4px 0;
-  margin-right: 0;
 }
 
 body.experience main section.spoilers header h1 {
@@ -989,11 +996,14 @@ body.experience main section.spoilers p {
 }
 
 body.experience main section.spoilers .spoiler-content {
-  padding: 2.35765%;
-  padding-bottom: 150px;
+  padding: 2.35765% 2.35765% 150px 2.35765%;
   color: #c21e1e;
   border-top: solid 1px #c21e1e;
   border-bottom: solid 1px #c21e1e;
+}
+
+body.experience main section.spoilers .spoiler-content.trigger {
+  cursor: pointer;
 }
 
 body.experience main section.spoilers .description {
@@ -1012,6 +1022,27 @@ body.experience main section.spoilers .description::after {
 body.experience main section.spoilers li.mailing img {
   width: 100%;
   width: 100%;
+}
+
+body.experience main section.spoilers li.mailing .description {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 65.88078%;
+  margin-left: 17.05961%;
+  float: none;
+}
+
+body.experience main section.spoilers li.mailing .description:last-child {
+  margin-right: 0;
+}
+
+body.experience main section.spoilers li.mailing .description:nth-child(4n) {
+  margin-right: 0;
+}
+
+body.experience main section.spoilers li.mailing .description:nth-child(4n+1) {
+  clear: left;
 }
 
 body.experience main section.spoilers li.mailing .caption {
@@ -1606,7 +1637,8 @@ body.landing main {
   left: auto;
   height: 100%;
   width: 220px;
-  background: #584844;
+  background: #312b2c;
+  background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/textures/light_alu.png"), linear-gradient(180deg, black, #312b2c), center no-repeat black scroll;
   -webkit-overflow-scrolling: touch;
   overflow-y: auto;
   transform: translateX(380px);
@@ -1630,8 +1662,8 @@ body.landing main {
 }
 
 .mobile-nav-content li a {
-  border-bottom: 1px solid #4a3c39;
-  color: #d4cac7;
+  border-bottom: 1px solid #231f20;
+  color: #b2a8ab;
   display: block;
   font-weight: bold;
   padding: 1em;
@@ -1646,7 +1678,7 @@ body.landing main {
 }
 
 .mobile-nav-content li a:focus {
-  background-color: #67534f;
+  background-color: #3e3739;
 }
 
 .mobile-nav-content li a:hover {
@@ -1697,4 +1729,13 @@ body.landing main {
 
 figcaption::before {
   content: "— ";
+}
+
+.accordion ul.submenu {
+  display: none;
+}
+
+.accordion .is-expanded {
+  display: block;
+  padding-bottom: 0;
 }

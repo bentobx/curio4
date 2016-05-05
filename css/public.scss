@@ -14,6 +14,7 @@ p { @extend %p; }
 small { @extend %small; }
 body {
   background-color: #FBF9F0;
+  @include texture(180deg, #FBF9F0, #FBF9F0, 18, 0);
   &> header {
     @include pad();
     @include omega();
@@ -88,7 +89,7 @@ body {
       @include pad(default);
       &.feature {
         @include pad(0);
-        @include margin(2em 0);
+        @include margin(0 0 modular-scale($perfect-fourth) 0);
         @include size(100% 300px);
         display: flex;
         align-items: center;
@@ -122,6 +123,7 @@ body {
       }
       &.strip {
         @include row();
+        min-height: 200px;
         color: $white;
         background: url('../images/logo/mpc-logo-black-transparent.png') 50% 50% no-repeat $greyish-brown;
         h1 {
@@ -247,10 +249,9 @@ body {
           .warning {
             @include pad(default);
             text-align: center;
-            background: $tomato;
-            h4 {
-              color: $white
-            }
+            // background: $tomato;
+            @include texture(180deg, $tomato, lighten($tomato, 20), 74, 0);
+            h4 { color: $white }
             p {
               font-size: 1.1em;
               letter-spacing: -0.1px;
@@ -312,20 +313,25 @@ body {
             }
           }
         }
+        // optional; you may want to use an inline image instead here
         &.interstitial {
-          @include pad();
-          margin-bottom: 30px;
-          background: url("../images/header-image.png") no-repeat;
+          // @include pad();
+          margin-bottom: modular-scale($perfect-fourth);
+          background: url("../images/header-image.png") no-repeat 50% 50% ;
           background-size: cover;
-          height: 400px;
+          height: 560px;
         }
         &.copy-body {
-          p:first-child {
-            &::first-line {
+          @include span-columns(8);
+          float: none;
+          // @include clearfix;
+          // @include row();
+          @include shift(2);
+          p {
+            &:first-line {
               font-weight: 900;
             }
           }
-          @include outer-container;
           figure {
             &.quote {
               @include pad();
@@ -339,7 +345,6 @@ body {
               blockquote {
                 @include margin(0);
               }
-
               float: right;
             }
             font-style: italic;
@@ -347,6 +352,7 @@ body {
           }
         }
         &.spoilers {
+          @include clearfix;
           header {
             background: url("../images/logo/m-p-c-black-logo.png") no-repeat 50% 110px, linear-gradient($tomato-50, rgba(255, 0, 0, 0.0));
             text-align: center;
@@ -355,19 +361,22 @@ body {
             border-top: solid 3px $brick;
             border-bottom: solid 3px $brick;
             @include pad(4px 0);
-            @include omega();
-            h1 {
-              line-height: 1;
-            }
+            // @include omega();
+            h1 { line-height: 1; }
           }
           p { margin: 0; }
           @include pad(0);
           .spoiler-content {
-            @include pad(default);
-            padding-bottom: 150px;
+            @include pad(default default 150px default);
             color: $brick;
             border-top: solid 1px $brick;
             border-bottom: solid 1px $brick;
+            &.trigger {
+              cursor: pointer;
+              &:hover {
+                // @todo: animate
+              }
+            }
           }
           .description {
             @include outer-container;
@@ -378,6 +387,12 @@ body {
               @include fill-parent;
               width: 100%;
             }
+            .description {
+              @include span-columns(8);
+              @include shift(2);
+              float: none;
+              @include omega(4n);
+            }
             .caption {
               @include row();
               // color: shade($brick,20%);
@@ -386,9 +401,7 @@ body {
               text-align: center;
             }
           }
-          h1,h2 {
-            color: $brick;
-          }
+          h1,h2 { color: $brick; }
         }
       }
     }
@@ -472,13 +485,11 @@ body {
   }
   &.landing {
     @include pad(flex-gutter());
-
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
     section {
       &.copy-body {
-
         @include omega();
         p,h1,h2 {
           text-align: center;
@@ -488,7 +499,6 @@ body {
           height: 187px;
           width: 230px;
         }
-
         .logo, .cta {
           @include row(block, $default-layout-direction);
           img {
@@ -500,11 +510,9 @@ body {
         .cta {
           @include margin(2em auto);
           @include margin(modular-scale($perfect-fourth) auto);
-
           .button {
             border-radius: 4px;
             @include margin(null auto modular-scale($perfect-fourth) auto);
-
           }
           a.more {
             font-style: italic;
@@ -542,7 +550,6 @@ body {
               @include margin(0);
               font-family: $sans-font-family;
               font-size: modular-scale(-1);
-
             }
           }
         }
@@ -589,11 +596,9 @@ body {
           @include shift(3);
           @include pad(4px 0);
           @include omega();
-
           border-top: solid 3px lighten($greyish-brown,50%);
           border-bottom: solid 3px lighten($greyish-brown,50%);
           .warning-content {
-
             @include pad(default);
             color: lighten($greyish-brown,50%);
             border-top: solid 1px lighten($greyish-brown,50%);
@@ -611,13 +616,11 @@ body {
         }
       }
     }
-
     &> header {
       text-align: center;
       min-height: auto;
       @include center-block;
       @include clearfix;
-
       h1 {
         font-size: modular-scale(4);
         text-transform: uppercase;
@@ -641,13 +644,10 @@ body {
         }
       }
     }
-
-
     &#weeping-book {
       height: 100%;
       float: left;
       position: absolute;
-
       img.bg-animation {
         z-index: -100;
         position: fixed;
@@ -659,10 +659,8 @@ body {
     main {
       margin-top: modular-scale(6)
     }
-
   }
 }
-
 // reusable widgets
 .mysterious-key {
   width: 59px;
@@ -725,7 +723,6 @@ body {
     display: block;
   }
 }
-
 // primary footer
 .footer {
   $base-spacing: 3.6em !default;
@@ -813,7 +810,7 @@ body {
   @include media('>=medium') {
     display: none;
   }
-  $mobile-nav-border-color: $greyish-brown;
+  $mobile-nav-border-color: $purple-brown;
   $mobile-nav-background: lighten($mobile-nav-border-color, 5%);
   $mobile-nav-color: lighten($mobile-nav-border-color, 55%);
   $mobile-nav-border: 1px solid $mobile-nav-border-color;
@@ -823,6 +820,7 @@ body {
   @include position(fixed, 0 0 0 auto);
   @include size(220px 100%);
   background: $mobile-nav-background;
+  @include texture(180deg, darken($mobile-nav-background, 20), $mobile-nav-background, 59, 1);
   -webkit-overflow-scrolling: touch;
   overflow-y: auto;
   transform: translateX(380px);
@@ -887,4 +885,15 @@ body {
 }
 figcaption::before {
   content: "— ";
+}
+// spoiler section and other hide/show triggers
+// @todo: animations
+.accordion {
+  ul.submenu {
+    display: none;
+  }
+  .is-expanded {
+    display: block;
+    padding-bottom: 0;
+  }
 }
