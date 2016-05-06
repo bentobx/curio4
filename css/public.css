@@ -1077,6 +1077,7 @@ body.home > header .video-bg {
   height: 100%;
   width: 200%;
   left: -50%;
+  z-index: -100;
 }
 
 body.home > header .video-bg video {
